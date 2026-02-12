@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DP Jewellers - Timeless Luxury</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <!-- Navigation Menu -->
+    <header class="main-header">
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <div class="container top-bar-container">
+          <div class="top-left">
+            <a href="#"><i class="icon-location"></i> Store Locator</a>
+            <a href="#">Contact Us</a>
+          </div>
+          <div class="top-right">
+            <a href="#">Track Order</a>
+            <a href="#">Login/Signup</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Navigation -->
+      <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+          <!-- Left: Menu Items -->
+          <ul class="nav-links left-links" id="navLinks">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li class="has-mega-menu">
+              <a href="pages/collections/collections.html" class="nav-link"
+                >Collections <span class="arrow">▾</span></a
+              >
+              <!-- Mega Menu Content -->
+              <div class="mega-menu">
+                <div class="container mega-menu-container">
+                  <div class="mega-menu-column">
+                    <h3>By Category</h3>
+                    <ul>
+                      <li><a href="pages/collections/gold-jewellery.html">Gold Jewellery</a></li>
+                      <li>
+                        <a href="pages/collections/diamond-jewellery.html">Diamond Jewellery</a>
+                      </li>
+                      <li>
+                        <a href="pages/collections/silver-articles.html">Silver Articles</a>
+                      </li>
+                      <li><a href="pages/collections/platinum.html">Platinum</a></li>
+                      <li><a href="pages/collections/gemstones.html">Gemstones</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-menu-column">
+                    <h3>By Collection</h3>
+                    <ul>
+                      <li><a href="pages/collections/grand-bridal.html">Grand Bridal</a></li>
+                      <li><a href="pages/collections/modern-minimal.html">Modern Minimal</a></li>
+                      <li><a href="pages/collections/temple-house.html">Temple House</a></li>
+                      <li>
+                        <a href="pages/collections/heritage-classics.html">Heritage Classics</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mega-menu-column">
+                    <h3>Gift Guides</h3>
+                    <ul>
+                      <li><a href="pages/collections/for-her.html">For Her</a></li>
+                      <li>
+                        <a href="pages/collections/anniversary-gifts.html">Anniversary Gifts</a>
+                      </li>
+                      <li>
+                        <a href="pages/collections/birthday-specials.html">Birthday Specials</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mega-menu-image">
+                    <img
+                      src="assets/images/antique-collection.jpg"
+                      alt="Featured Collection"
+                    />
+                    <div class="image-label">
+                      Featured: The Antique Collection
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a href="pages/info/my-story.html" class="nav-link">My Story</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+
+          <!-- Center: Logo -->
+          <div class="logo">
+            <a href="#home"><img src="assets/images/logo.png" alt="DP Jewellers Logo" /></a>
+          </div>
+
+          <!-- Right: Icons -->
+          <div class="nav-icons">
+            <div class="nav-icon-item search-toggle">
+              <svg
+                class="nav-svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </div>
+            <div class="nav-icon-item wishlist-nav">
+              <svg
+                class="nav-svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                ></path>
+              </svg>
+            </div>
+            <div class="nav-icon-item cart-nav">
+              <svg
+                class="nav-svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"
+                ></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+            </div>
+            <div class="hamburger" id="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section (Auto-Scrolling Slider) -->
+    <section class="hero-slider" id="home">
+      <div class="slider-container">
+        <!-- Slide 1: Festival of Diamonds -->
+        <div class="slide active">
+          <div class="slide-content">
+            <h2 class="slide-subtitle">A Dp Jewellers Product</h2>
+            <h1 class="slide-title">Festival of<br />Diamonds</h1>
+            <div class="slide-divider"></div>
+            <p class="slide-offer">FLAT 20% OFF*</p>
+            <p class="slide-terms">*on diamond value across 10,000+ designs</p>
+            <div class="slide-btns">
+              <a href="#collections" class="cta-button">Explore Now</a>
+            </div>
+          </div>
+          <div class="slide-image" style="background-image: url('assets/images/diamond-festival-set.jpg');"></div>
+          <div class="slide-overlay"></div>
+        </div>
+
+        <!-- Slide 2: Season of Style -->
+        <div class="slide">
+          <div class="slide-content">
+            <h2 class="slide-subtitle">Season Of Style '26</h2>
+            <h1 class="slide-title">Elegance In<br />Every Motion</h1>
+            <div class="slide-divider"></div>
+            <p class="slide-description">From India's most loved designs that captured hearts, a tribute to joy.</p>
+            <div class="slide-btns">
+              <a href="#collections" class="cta-button">Explore Now</a>
+            </div>
+          </div>
+          <div class="slide-image" style="background-image: url('assets/images/model shoot.jpg');"></div>
+          <div class="slide-overlay"></div>
+        </div>
+
+        <!-- Slide 3: Grand Bridal -->
+        <div class="slide">
+          <div class="slide-content">
+            <h2 class="slide-subtitle">Grand Bridal Collection</h2>
+            <h1 class="slide-title">Your Dream<br />Wedding Awaits</h1>
+            <div class="slide-divider"></div>
+            <p class="slide-description">Majestic sets for your eternal union. Heirlooms for generations.</p>
+            <div class="slide-btns">
+              <a href="pages/collections/grand-bridal.html" class="cta-button">View Collection</a>
+            </div>
+          </div>
+          <div class="slide-image" style="background-image: url('assets/images/Bridal Set 1 (16th Mar.).jpg');"></div>
+          <div class="slide-overlay"></div>
+        </div>
+
+        <!-- Slide 4: Eternal Platinum -->
+        <div class="slide">
+          <div class="slide-content">
+            <h2 class="slide-subtitle">Pure. Rare. Eternal.</h2>
+            <h1 class="slide-title">The Platinum<br />Promise</h1>
+            <div class="slide-divider"></div>
+            <p class="slide-description">Discover the rarest of metals, crafted with master artistry.</p>
+            <div class="slide-btns">
+              <a href="pages/collections/platinum.html" class="cta-button">Discover Platinum</a>
+            </div>
+          </div>
+          <div class="slide-image" style="background-image: url('assets/images/platinum-modern-set.jpg');"></div>
+          <div class="slide-overlay"></div>
+        </div>
+      </div>
+
+      <!-- Slider Controls -->
+      <div class="slider-dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="collections">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <h2 class="section-title">Our Collections</h2>
+          <p class="section-subtitle">Curated selections for every occasion</p>
+        </div>
+
+        <div class="categories-grid">
+          <div class="category-card fade-in-up">
+            <div class="category-image">
+              <img
+                src="assets/images/bridal-collection-featured.jpg"
+                alt="Bridal Wear Collection"
+                class="img-fluid"
+              />
+            </div>
+            <div class="category-content">
+              <h3 class="category-title">Grand Bridal</h3>
+              <p class="category-description">
+                Majestic sets for your eternal union
+              </p>
+            </div>
+          </div>
+
+          <div class="category-card fade-in-up">
+            <div class="category-image">
+              <img
+                src="assets/images/minimal-collection-featured.jpg"
+                alt="Daily Minimal Collection"
+                class="img-fluid"
+              />
+            </div>
+            <div class="category-content">
+              <h3 class="category-title">Modern Minimal</h3>
+              <p class="category-description">
+                Subtle grace for your daily narrative
+              </p>
+            </div>
+          </div>
+
+          <div class="category-card fade-in-up">
+            <div class="category-image">
+              <img
+                src="assets/images/diamond-classics-featured.jpg"
+                alt="Diamond Classics Collection"
+                class="img-fluid"
+              />
+            </div>
+            <div class="category-content">
+              <h3 class="category-title">Eternal Diamonds</h3>
+              <p class="category-description">
+                Brilliance that captures every moment
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section class="products">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <h2 class="section-title">Featured Pieces</h2>
+          <p class="section-subtitle">
+            Handpicked selections from our latest collection
+          </p>
+        </div>
+
+        <div class="products-grid">
+          <div class="product-card fade-in-up">
+            <div class="product-image-wrapper">
+              <div class="product-image">
+                <img
+                  src="assets/images/diamond-ring-ethereal.jpg"
+                  alt="Ethereal Solitaire Ring"
+                />
+              </div>
+              <button class="wishlist-btn" aria-label="Add to wishlist">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Ethereal Solitaire</h3>
+              <p class="product-price">₹1,24,500</p>
+            </div>
+          </div>
+
+          <div class="product-card fade-in-up">
+            <div class="product-image-wrapper">
+              <div class="product-image">
+                <img
+                  src="assets/images/platinum-heritage-set.jpg"
+                  alt="Royal Heritage Set"
+                />
+              </div>
+              <button class="wishlist-btn" aria-label="Add to wishlist">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Royal Heritage Set</h3>
+              <p class="product-price">₹2,85,000</p>
+            </div>
+          </div>
+
+          <div class="product-card fade-in-up">
+            <div class="product-image-wrapper">
+              <div class="product-image">
+                <img
+                  src="assets/images/platinum-gold-band.jpg"
+                  alt="Minimalist Band"
+                />
+              </div>
+              <button class="wishlist-btn" aria-label="Add to wishlist">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Minimalist Gold Band</h3>
+              <p class="product-price">₹45,500</p>
+            </div>
+          </div>
+
+          <div class="product-card fade-in-up">
+            <div class="product-image-wrapper">
+              <div class="product-image">
+                <img
+                  src="assets/images/gemstone-celestial-pendant.jpg"
+                  alt="Celestial Pendant"
+                />
+              </div>
+              <button class="wishlist-btn" aria-label="Add to wishlist">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Celestial Pendant</h3>
+              <p class="product-price">₹78,900</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="story" id="story">
+      <div class="container">
+        <div class="story-content">
+          <div class="story-text fade-in-up">
+            <h2 class="section-title">Our Story</h2>
+            <div class="story-divider"></div>
+            <p>
+              For over three decades, DP Jewellers has been crafting moments of
+              brilliance. Founded on principles of authenticity, artistry, and
+              excellence, we transform precious metals and gemstones into
+              heirlooms that transcend generations.
+            </p>
+            <p>
+              Each piece in our collection is a testament to the skilled hands
+              of our master craftsmen, who blend traditional techniques with
+              contemporary design sensibilities.
+            </p>
+          </div>
+          <div class="story-image fade-in-up">
+            <img src="assets/images/our-story-craftsmanship.jpg" alt="Our Craftsmanship" style="border-radius: 8px; box-shadow: var(--shadow-premium);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Signals -->
+    <section class="trust-signals">
+      <div class="container">
+        <div class="trust-grid">
+          <div class="trust-card fade-in-up">
+            <div class="trust-icon">
+              <svg
+                width="50"
+                height="50"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#C5A059"
+                stroke-width="1.5"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+            </div>
+            <h3 class="trust-title">Certified Purity</h3>
+            <p class="trust-description">
+              BIS hallmarked gold & GIA certified diamonds
+            </p>
+          </div>
+
+          <div class="trust-card fade-in-up">
+            <div class="trust-icon">
+              <svg
+                width="50"
+                height="50"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#C5A059"
+                stroke-width="1.5"
+              >
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <h3 class="trust-title">Lifetime Exchange</h3>
+            <p class="trust-description">
+              100% exchange value on all purchases
+            </p>
+          </div>
+
+          <div class="trust-card fade-in-up">
+            <div class="trust-icon">
+              <svg
+                width="50"
+                height="50"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#C5A059"
+                stroke-width="1.5"
+              >
+                <rect x="1" y="3" width="15" height="13" />
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                <circle cx="5.5" cy="18.5" r="2.5" />
+                <circle cx="18.5" cy="18.5" r="2.5" />
+              </svg>
+            </div>
+            <h3 class="trust-title">Free Insured Shipping</h3>
+            <p class="trust-description">Secure delivery across India</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+      <div class="container footer-container">
+        <!-- Top Section: Subscription and Company Info -->
+        <div class="footer-top">
+          <div class="footer-newsletter">
+            <h3>Subscribe to receive exciting offers!</h3>
+            <form class="newsletter-form-inline">
+              <div class="input-wrapper">
+                <input type="email" placeholder="Your email address" required />
+                <button type="submit">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </form>
+            <div class="company-info">
+              <p class="company-name">DP Jewellers</p>
+              <p class="address">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  style="margin-right: 5px"
+                >
+                  <path
+                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                  ></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                Chowk, Station Road, Okdenganj, <br />
+                Ballia - 277001, Uttar Pradesh.
+              </p>
+            </div>
+          </div>
+
+          <!-- Footer Columns -->
+          <div class="footer-columns">
+            <div class="footer-column">
+              <h4>Policy</h4>
+              <ul>
+                <li><a href="pages/policies/shipping-policy.html">Shipping & Delivery Policy</a></li>
+                <li><a href="pages/policies/return-policy.html">Return & Exchange Policy</a></li>
+                <li><a href="pages/policies/warranty-policy.html">Lifetime Warranty Policy</a></li>
+                <li><a href="pages/policies/buyback-policy.html">Lifetime BuyBack Policy</a></li>
+                <li><a href="pages/policies/payment-policy.html">Payment Policy</a></li>
+                <li><a href="pages/policies/grievance-policy.html">Grievance Redressal Policy</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Help</h4>
+              <ul>
+                <li><a href="pages/info/faq.html">FAQ's</a></li>
+                <li><a href="pages/info/contact.html">Contact Us</a></li>
+                <li><a href="pages/policies/terms.html">Terms of Service</a></li>
+                <li><a href="pages/policies/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="pages/info/track-order.html">Track Order</a></li>
+                <li><a href="pages/policies/return-policy.html">Return & Exchange</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>About Us</h4>
+              <ul>
+                <li><a href="pages/info/about-us.html">About Us</a></li>
+                <li><a href="pages/info/blogs.html">Blogs</a></li>
+                <li><a href="pages/info/contact.html">Contact Us</a></li>
+                <li><a href="pages/info/stores.html">Stores & Services</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Section: Socials, Apps, Payments -->
+        <div class="footer-bottom-detailed">
+          <div class="footer-bottom-left">
+            <div class="social-icons-detailed">
+              <a href="#" class="social-circle"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  ></path></svg
+              ></a>
+              <a href="#" class="social-circle"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path
+                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                  ></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg
+              ></a>
+              <a href="#" class="social-circle"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  ></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle></svg
+              ></a>
+              <a href="#" class="social-circle"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+                  ></path>
+                  <polygon
+                    points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
+                  ></polygon></svg
+              ></a>
+            </div>
+            <div class="app-download-pod">
+              <p>Download the DP Jewellers App</p>
+              <span class="downloads-info">( 5L+ Downloads | 4.4 ★ )</span>
+              <div class="app-buttons">
+                <a href="#" class="app-btn">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                    alt="Google Play"
+                  />
+                </a>
+                <a href="#" class="app-btn">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+                    alt="App Store"
+                  />
+                </a>
+              </div>
+              <p class="exclusive-offers">Get Exclusive Offers On App</p>
+            </div>
+          </div>        
+        <div class="scroll-top-wrapper">
+              <button id="scrollToTop" class="scroll-top-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ's - DP Jewellers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <div class="container top-bar-container">
+          <div class="top-left">
+            <a href="../../index.html#home"><i class="icon-location"></i> Store Locator</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+          <div class="top-right">
+            <a href="track-order.html">Track Order</a>
+            <a href="#">Login/Signup</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Navigation -->
+      <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+          <!-- Left: Menu Items -->
+          <ul class="nav-links left-links" id="navLinks">
+            <li><a href="../../index.html#home" class="nav-link">Home</a></li>
+            <li class="has-mega-menu">
+              <a href="../collections/collections.html" class="nav-link"
+                >Collections <span class="arrow">▾</span></a
+              >
+              <!-- Mega Menu Content -->
+              <div class="mega-menu">
+                <div class="container mega-menu-container">
+                  <div class="mega-menu-column">
+                    <h3>By Category</h3>
+                    <ul>
+                      <li><a href="../collections/gold-jewellery.html">Gold Jewellery</a></li>
+                      <li>
+                        <a href="../collections/diamond-jewellery.html">Diamond Jewellery</a>
+                      </li>
+                      <li>
+                        <a href="../collections/silver-articles.html">Silver Articles</a>
+                      </li>
+                      <li><a href="../collections/platinum.html">Platinum</a></li>
+                      <li><a href="../collections/gemstones.html">Gemstones</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-menu-column">
+                    <h3>By Collection</h3>
+                    <ul>
+                      <li><a href="../collections/grand-bridal.html">Grand Bridal</a></li>
+                      <li><a href="../collections/modern-minimal.html">Modern Minimal</a></li>
+                      <li><a href="../collections/temple-house.html">Temple House</a></li>
+                      <li>
+                        <a href="../collections/heritage-classics.html">Heritage Classics</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mega-menu-column">
+                    <h3>Gift Guides</h3>
+                    <ul>
+                      <li><a href="../collections/for-her.html">For Her</a></li>
+                      <li>
+                        <a href="../collections/anniversary-gifts.html">Anniversary Gifts</a>
+                      </li>
+                      <li>
+                        <a href="../collections/birthday-specials.html">Birthday Specials</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mega-menu-image">
+                    <img
+                      src="../../assets/images/antique-collection.jpg"
+                      alt="Featured Collection"
+                    />
+                    <div class="image-label">
+                      Featured: The Antique Collection
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a href="my-story.html" class="nav-link">My Story</a></li>
+            <li><a href="../../index.html#contact" class="nav-link">Contact</a></li>
+          </ul>
+
+          <!-- Center: Logo -->
+          <div class="logo">
+            <a href="../../index.html#home"><img src="../../assets/images/logo.png" alt="DP Jewellers Logo" /></a>
+          </div>
+
+          <!-- Right: Icons -->
+          <div class="nav-icons">
+            <div class="nav-icon-item search-toggle">
+              <svg
+                class="nav-svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </div>
+            <div class="nav-icon-item wishlist-nav">
+              <svg
+                class="nav-svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                ></path>
+              </svg>
+            </div>
+            <div class="nav-icon-item cart-nav">
+              <svg
+                class="nav-svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"
+                ></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+            </div>
+            <div class="hamburger" id="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main
+      class="static-page container"
+      style="margin-top: 180px; margin-bottom: 100px; max-width: 900px"
+    >
+      <h1 class="section-title" style="margin-bottom: 40px; text-align: left">
+        Frequently Asked Questions
+      </h1>
+
+      <div class="content" style="line-height: 1.8; color: var(--dark-gray)">
+        <h3
+          style="
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            font-family: var(--font-heading);
+          "
+        >
+          1. Are your diamonds certified?
+        </h3>
+        <p>
+          Yes, all our diamonds are certified by reputed international
+          laboratories like GIA, IGI, or HRD.
+        </p>
+
+        <h3
+          style="
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            font-family: var(--font-heading);
+          "
+        >
+          2. Is the gold hallmarked?
+        </h3>
+        <p>
+          Absolutely. Every piece of gold jewellery at DP Jewellers carries the
+          BIS Hallmark as a guarantee of its purity.
+        </p>
+
+        <h3
+          style="
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            font-family: var(--font-heading);
+          "
+        >
+          3. Can I track my order?
+        </h3>
+        <p>
+          Yes, you can track your order using the "Track Order" link in the
+          footer or by visiting our dedicated tracking page with your order ID.
+        </p>
+
+        <h3
+          style="
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            font-family: var(--font-heading);
+          "
+        >
+          4. Do you offer customization?
+        </h3>
+        <p>
+          Yes, we specialize in custom-made jewellery. You can visit our store
+          or contact us to discuss your design ideas.
+        </p>
+      </div>
+    </main>
+
+    <footer class="footer" id="contact">
+      <div class="container footer-container">
+        <!-- Top Section: Subscription and Company Info -->
+        <div class="footer-top">
+          <div class="footer-newsletter">
+            <h3>Subscribe to receive exciting offers!</h3>
+            <form class="newsletter-form-inline">
+              <div class="input-wrapper">
+                <input type="email" placeholder="Your email address" required />
+                <button type="submit">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </form>
+            <div class="company-info">
+              <p class="company-name">DP Jewellers</p>
+              <p class="address">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  style="margin-right: 5px"
+                >
+                  <path
+                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                  ></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                Chowk, Station Road, Okdenganj, <br />
+                Ballia - 277001, Uttar Pradesh.
+              </p>
+            </div>
+          </div>
+
+          <!-- Footer Columns -->
+          <div class="footer-columns">
+            <div class="footer-column">
+              <h4>Policy</h4>
+              <ul>
+                <li><a href="../policies/shipping-policy.html">Shipping & Delivery Policy</a></li>
+                <li><a href="../policies/return-policy.html">Return & Exchange Policy</a></li>
+                <li><a href="../policies/warranty-policy.html">Lifetime Warranty Policy</a></li>
+                <li><a href="../policies/buyback-policy.html">Lifetime BuyBack Policy</a></li>
+                <li><a href="../policies/payment-policy.html">Payment Policy</a></li>
+                <li><a href="../policies/grievance-policy.html">Grievance Redressal Policy</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Help</h4>
+              <ul>
+                <li><a href="faq.html">FAQ's</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="../policies/terms.html">Terms of Service</a></li>
+                <li><a href="../policies/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="track-order.html">Track Order</a></li>
+                <li><a href="../policies/return-policy.html">Return & Exchange</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>About Us</h4>
+              <ul>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="stores.html">Stores & Services</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Section: Socials, Apps, Payments -->
+        <div class="footer-bottom-detailed">
+          <div class="footer-bottom-left">
+            <div class="social-icons-detailed">
+              <a href="#" class="social-circle"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  ></path></svg
+              ></a>
+              <a href="#" class="social-circle"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path
+                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                  ></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg
+              ></a>
+              <a href="#" class="social-circle"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  ></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle></svg
+              ></a>
+              <a href="#" class="social-circle"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+                  ></path>
+                  <polygon
+                    points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
+                  ></polygon></svg
+              ></a>
+            </div>
+            <div class="app-download-pod">
+              <p>Download the DP Jewellers App</p>
+              <span class="downloads-info">( 5L+ Downloads | 4.4 ★ )</span>
+              <div class="app-buttons">
+                <a href="#" class="app-btn">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                    alt="Google Play"
+                  />
+                </a>
+                <a href="#" class="app-btn">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+                    alt="App Store"
+                  />
+                </a>
+              </div>
+              <p class="exclusive-offers">Get Exclusive Offers On App</p>
+            </div>
+          </div>        
+        <div class="scroll-top-wrapper">
+              <button id="scrollToTop" class="scroll-top-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../../assets/js/script.js"></script>
+  </body>
+</html>
