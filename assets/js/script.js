@@ -36,7 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
       navLinksContainer.classList.toggle("active");
     });
 
-    navLinks.forEach((link) => {
+    const allLinks = navLinksContainer.querySelectorAll(".nav-link");
+    allLinks.forEach((link) => {
       link.addEventListener("click", () => {
         hamburger.classList.remove("active");
         navLinksContainer.classList.remove("active");
@@ -44,7 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.addEventListener("click", (e) => {
-      if (!hamburger.contains(e.target) && !navLinksContainer.contains(e.target)) {
+      if (
+        !hamburger.contains(e.target) &&
+        !navLinksContainer.contains(e.target)
+      ) {
         hamburger.classList.remove("active");
         navLinksContainer.classList.remove("active");
       }
@@ -85,7 +89,11 @@ document.addEventListener("DOMContentLoaded", () => {
     let slideInterval;
     const intervalTime = 3000; // Increased to 3 seconds for stability
 
-    console.log("Slider: Initializing with 3s interval. Found", slides.length, "slides.");
+    console.log(
+      "Slider: Initializing with 3s interval. Found",
+      slides.length,
+      "slides.",
+    );
 
     function nextSlide() {
       const oldSlide = currentSlide;
@@ -99,8 +107,10 @@ document.addEventListener("DOMContentLoaded", () => {
       // Add active class to new slide and dot
       slides[currentSlide].classList.add("active");
       if (dots[currentSlide]) dots[currentSlide].classList.add("active");
-      
-      console.log(`Slider: Moved from ${oldSlide} to ${currentSlide} at ${new Date().toLocaleTimeString()}`);
+
+      console.log(
+        `Slider: Moved from ${oldSlide} to ${currentSlide} at ${new Date().toLocaleTimeString()}`,
+      );
     }
 
     function goToSlide(index) {
@@ -149,7 +159,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // ===================================
   const fadeElements = document.querySelectorAll(".fade-in-up");
   if (fadeElements.length > 0) {
-    const observerOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: "0px 0px -50px 0px",
+    };
     const fadeInObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
@@ -223,18 +236,55 @@ document.addEventListener("DOMContentLoaded", () => {
       if (targetId === "#") return;
       const targetSection = document.querySelector(targetId);
       if (targetSection) {
-        window.scrollTo({ top: targetSection.offsetTop - 80, behavior: "smooth" });
+        window.scrollTo({
+          top: targetSection.offsetTop - 80,
+          behavior: "smooth",
+        });
       }
     });
   });
 
   // Global Hover Transitions
-  const hoverElements = document.querySelectorAll(".cta-button, .product-card, .category-card");
+  const hoverElements = document.querySelectorAll(
+    ".cta-button, .product-card, .category-card",
+  );
   hoverElements.forEach((el) => {
     el.addEventListener("mouseenter", () => {
       el.style.transition = "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)";
     });
   });
+
+  // ===================================
+  // Testimonials Slider (Auto-Rotate Every 10 Seconds)
+  // ===================================
+  const testimonialCards = document.querySelectorAll(".testimonial-card");
+  if (testimonialCards.length > 0) {
+    let currentTestimonial = 0;
+    const testimonialInterval = 10000; // 10 seconds
+    const transitionDelay = 300; // Small delay to ensure smooth transition
+
+    function showNextTestimonial() {
+      // Remove active class from current testimonial
+      testimonialCards[currentTestimonial].classList.remove("active");
+      
+      // Wait for fade-out to complete before showing next
+      setTimeout(() => {
+        // Move to next testimonial
+        currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
+        
+        // Add active class to new testimonial
+        testimonialCards[currentTestimonial].classList.add("active");
+      }, transitionDelay);
+    }
+
+    // Initialize: Show first testimonial
+    if (testimonialCards[0]) {
+      testimonialCards[0].classList.add("active");
+    }
+
+    // Start auto-rotation
+    setInterval(showNextTestimonial, testimonialInterval);
+  }
 
   // Loading indicator
   document.body.classList.add("loaded");
