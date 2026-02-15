@@ -18,21 +18,13 @@
 </head>
 
 <body>
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+
   <!-- Navigation Menu -->
   <header class="main-header">
-    <!-- Top Bar -->
-    <div class="top-bar">
-      <div class="container top-bar-container">
-        <div class="top-bar-left">
-          <span class="top-bar-item"><strong>Ballia</strong> / Since 1941</span>
-        </div>
-        <div class="top-bar-right">
-          <a href="tel:7084791465" class="top-bar-item">📞 7084791465</a>
-          <span class="top-bar-separator">|</span>
-          <span class="top-bar-item">🕒 10:00 AM – 9:00 PM</span>
-        </div>
-      </div>
-    </div>
+    <!-- Top Bar Removed -->
 
     <!-- Main Navigation -->
     <nav class="navbar" id="navbar">
@@ -88,7 +80,8 @@
           <h2 class="slide-subtitle">A Legacy of Brilliance Since 1941</h2>
           <h1 class="slide-title">Crafting Moments<br />That Last Forever</h1>
           <div class="slide-divider"></div>
-          <p class="slide-description">Discover the art of fine jewelry, where every piece tells a story of heritage and exquisite craftsmanship.</p>
+          <p class="slide-description">Discover the art of fine jewelry, where every piece tells a story of heritage and
+            exquisite craftsmanship.</p>
           <div class="slide-btns">
             <a href="pages/info/about-us.html" class="cta-button">Our Heritage</a>
           </div>
@@ -145,12 +138,14 @@
 
     <!-- Slider Controls -->
     <div class="slider-dots">
-      <span class="dot active" data-index="0"></span>
-      <span class="dot" data-index="1"></span>
-      <span class="dot" data-index="2"></span>
-      <span class="dot" data-index="3"></span>
+      <div class="dot active" data-slide="0"></div>
+      <div class="dot" data-slide="1"></div>
+      <div class="dot" data-slide="2"></div>
+      <div class="dot" data-slide="3"></div>
     </div>
-    <div class="ethnic-border"></div>
+
+    <!-- Overlapping Ethnic Border -->
+    <div class="ethnic-border hero-border"></div>
   </section>
 
   <!-- Categories Section -->
@@ -203,72 +198,6 @@
   </section>
 
   <!-- Product Showcase -->
-  <section class="products">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <h2 class="section-title">Featured Pieces</h2>
-        <p class="section-subtitle">
-          Handpicked selections from our latest collection
-        </p>
-      </div>
-
-      <div class="products-grid">
-        <div class="product-card fade-in-up">
-          <div class="product-image-wrapper">
-            <div class="product-image">
-              <img src="assets/images/diamond-ring-ethereal.jpg" alt="Ethereal Solitaire Ring" />
-            </div>
-            <button class="wishlist-btn" aria-label="Add to wishlist">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path
-                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-              </svg>
-            </button>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Ethereal Solitaire</h3>
-            <a href="#contact-inquiry" class="product-action-btn">Inquire Now</a>
-          </div>
-        </div>
-
-        <div class="product-card fade-in-up">
-          <div class="product-image-wrapper">
-            <div class="product-image">
-              <img src="assets/images/platinum-heritage-set.jpg" alt="Royal Heritage Set" />
-            </div>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Royal Heritage Set</h3>
-            <a href="#contact-inquiry" class="product-action-btn">Inquire Now</a>
-          </div>
-        </div>
-
-        <div class="product-card fade-in-up">
-          <div class="product-image-wrapper">
-            <div class="product-image">
-              <img src="assets/images/platinum-gold-band.jpg" alt="Minimalist Band" />
-            </div>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Minimalist Gold Band</h3>
-            <a href="#contact-inquiry" class="product-action-btn">Inquire Now</a>
-          </div>
-        </div>
-
-        <div class="product-card fade-in-up">
-          <div class="product-image-wrapper">
-            <div class="product-image">
-              <img src="assets/images/gemstone-celestial-pendant.jpg" alt="Celestial Pendant" />
-            </div>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Celestial Pendant</h3>
-            <a href="#contact-inquiry" class="product-action-btn">Inquire Now</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Our Story Section -->
   <section class="story" id="story">
@@ -278,7 +207,7 @@
           <h2 class="section-title">Our Story</h2>
           <div class="story-divider"></div>
           <p>
-            For over three decades, DP Jewellers has been crafting moments of
+            For over eight decades, DP Jewellers has been crafting moments of
             brilliance. Founded on principles of authenticity, artistry, and
             excellence, we transform precious metals and gemstones into
             heirlooms that transcend generations.
@@ -329,7 +258,7 @@
       <!-- Item 3 -->
       <div class="showcase-item fade-in-up">
         <div class="showcase-image">
-          <img src="assets/images/Bridal Set 1 (16th Mar.).jpg" alt="Bridal Set" />
+          <img src="assets/images/bridal-set-1.jpg" alt="Bridal Set" />
         </div>
         <div class="showcase-text">
           <h3>Shine Bright. Sparkle more</h3>
@@ -341,72 +270,138 @@
     </div>
   </section>
   <!-- Craftsmanship & Benefits Section -->
-  <section class="craftsmanship-benefits">
-    <div class="ethnic-border"></div>
+  <!-- Craftsmanship & Benefits Section (User Provided Layout) -->
+  <section class="backgroundv2">
+    <!-- Background Banner (using existing ethnic border as fallback for banner) -->
+    <div class="ethnic-border" style="display:block; opacity:1; margin-bottom:0;"></div>
+
     <div class="container">
-      <!-- Why DP Jewellers? -->
-      <h2 class="section-title">Why DP Jewellers?</h2>
-      <div class="benefits-row fade-in-up">
-        <div class="benefit-item">
-          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-          </svg>
-          <span class="benefit-text">Classic Designer<br>Collection</span>
-        </div>
-        <div class="benefit-item">
-          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-          </svg>
-          <span class="benefit-text">100%<br>Satisfaction</span>
-        </div>
-        <div class="benefit-item">
-          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-          <span class="benefit-text">Transparency</span>
-        </div>
-        <div class="benefit-item">
-          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-          </svg>
-          <span class="benefit-text">100% Guaranteed<br>Exchange</span>
-        </div>
-        <div class="benefit-item">
-          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="12" y1="8" x2="12" y2="12"></line>
-            <line x1="12" y1="16" x2="12.01" y2="16"></line>
-          </svg>
-          <span class="benefit-text">Best Price<br>Guaranteed</span>
-        </div>
-        <div class="benefit-item">
-          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-          </svg>
-          <span class="benefit-text">Trustworthy</span>
+      <div class="row section-padding pt-0" style="padding-top: 60px;">
+        <h2 class="text-center dptext section-title mb-4 pb-3">The DP Promise</h2>
+        <div class="px-md-5 whydp-main">
+
+          <!-- Classic Designer Collection -->
+          <div class="single-div">
+            <svg class="benefit-icon mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <div class="custom-border-right">
+              <h3 class="text-center fw-semibold dptext3 font16">CLASSIC DESIGNER COLLECTION</h3>
+            </div>
+          </div>
+
+          <!-- 100% Satisfaction -->
+          <div class="single-div">
+            <svg class="benefit-icon mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <div class="custom-border-right">
+              <h3 class="text-center fw-semibold dptext3 font16">100% SATISFACTION</h3>
+            </div>
+          </div>
+
+          <!-- Transparency -->
+          <div class="single-div">
+            <svg class="benefit-icon mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <div class="custom-border-right">
+              <h3 class="text-center fw-semibold dptext3 font16">TRANSPARENCY</h3>
+            </div>
+          </div>
+
+          <!-- Guaranteed Exchange -->
+          <div class="single-div">
+            <svg class="benefit-icon mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <div class="custom-border-right">
+              <h3 class="text-center fw-semibold dptext3 font16">100% GUARANTEED EXCHANGE</h3>
+            </div>
+          </div>
+
+          <!-- Best Price -->
+          <div class="single-div">
+            <svg class="benefit-icon mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <div class="custom-border-right">
+              <h3 class="text-center fw-semibold dptext3 font16">BEST PRICE GUARANTEED</h3>
+            </div>
+          </div>
+
+          <!-- Trustworthy -->
+          <div class="single-div">
+            <svg class="benefit-icon mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <div class="custom-border-right"> <!-- Removed border for last item via CSS -->
+              <h3 class="text-center fw-semibold dptext3 font16">TRUSTWORTHY</h3>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Our Craftsmanship -->
-      <h2 class="section-title">Our Craftsmanship</h2>
-      <div class="craftsmanship-grid fade-in-up">
-        <div class="craft-card">
-          <img src="assets/images/gold-necklace-antique-collection.jpg" alt="Gold Jewellery" />
-          <div class="craft-card-label">Gold Jewellery</div>
-        </div>
-        <div class="craft-card">
-          <img src="assets/images/diamond-festival-set.jpg" alt="Diamond Jewellery" />
-          <div class="craft-card-label">Diamond Jewellery</div>
-        </div>
-        <div class="craft-card">
-          <img src="assets/images/diamond-solitaire-ring.jpg" alt="Solitaire Jewellery" />
-          <div class="craft-card-label">Solitaire Jewellery</div>
-        </div>
-        <div class="craft-card">
-          <img src="assets/images/platinum-collection.jpg" alt="Platinum Jewellery" />
-          <div class="craft-card-label">Platinum Jewellery</div>
+      <div class="row section-padding pt-0 mx-1">
+        <h2 class="text-center dptext section-title mb-3" style="margin-top: 60px;">Our Craftsmanship</h2>
+
+        <!-- Simulate Swiper with Grid/Flex -->
+        <div class="ourcrafsld">
+          <div class="custom-grid-wrapper">
+
+            <!-- Gold -->
+            <div class="custom-slide-item">
+              <a href="pages/collections/gold-jewellery.html" class="text-decoration-none">
+                <img src="assets/images/gold-necklace-antique.jpg" class="w-100 mb-3 " alt="Gold">
+                <h3 class="text-center dptext font20 fw-semibold">Gold Jewellery</h3>
+              </a>
+            </div>
+
+            <!-- Diamond -->
+            <div class="custom-slide-item">
+              <a href="pages/collections/diamond-jewellery.html" class="text-decoration-none">
+                <img src="assets/images/diamond-ring-ethereal.jpg" class="w-100 mb-3 " alt="Diamond">
+                <h3 class="text-center dptext font20 fw-semibold">Diamond Jewellery</h3>
+              </a>
+            </div>
+
+            <!-- Solitaire -->
+            <div class="custom-slide-item">
+              <a href="pages/collections/diamond-jewellery.html" class="text-decoration-none">
+                <img src="assets/images/diamond-solitaire-ring.jpg" class="w-100 mb-3 " alt="Solitaire">
+                <h3 class="text-center dptext font20 fw-semibold">Solitaire Jewellery</h3>
+              </a>
+            </div>
+
+            <!-- Platinum -->
+            <div class="custom-slide-item">
+              <a href="pages/collections/platinum.html" class="text-decoration-none">
+                <img src="assets/images/platinum-heritage-set.jpg" class="w-100 mb-3 " alt="Platinum">
+                <h3 class="text-center dptext font20 fw-semibold">Platinum Jewellery</h3>
+              </a>
+            </div>
+
+            <!-- Silver -->
+            <div class="custom-slide-item">
+              <a href="pages/collections/silver-articles.html" class="text-decoration-none">
+                <img src="assets/images/silver-article-1.jpg" class="w-100 mb-3 " alt="Silver">
+                <h3 class="text-center dptext font20 fw-semibold">Silver Jewellery</h3>
+              </a>
+            </div>
+
+            <!-- Corporate Gifting -->
+            <div class="custom-slide-item">
+              <a href="#" class="text-decoration-none">
+                <img src="assets/images/silver-gift-set.jpg" class="w-100 mb-3 " alt="Corporate">
+                <h3 class="text-center dptext font20 fw-semibold">Corporate Gifting</h3>
+              </a>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>

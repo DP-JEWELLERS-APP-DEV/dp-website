@@ -155,9 +155,56 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ===================================
+  // Header Scroll Effect
+  // ===================================
+  // The 'header' variable is already declared globally at the top of the DOMContentLoaded listener.
+  // The 'header' scroll behavior is already handled in the 'Navbar Scroll Behavior' section.
+  // This block is redundant if the existing 'Navbar Scroll Behavior' is intended to cover the header's 'scrolled' class.
+  // If this is meant to be a separate, additional effect, ensure 'header' is not re-declared.
+  // For now, assuming this is an *additional* effect or a refactoring, and keeping the original header declaration.
+  // If the intent is to replace the header part of 'Navbar Scroll Behavior', that section should be modified.
+  // As per instruction, adding this block as provided.
+  // Note: The original 'Navbar Scroll Behavior' also adds/removes 'is-sticky'. This new block only handles 'scrolled'.
+  // If the goal is to consolidate, the existing 'Navbar Scroll Behavior' should be updated.
+  // For now, faithfully adding the provided code.
+  // const header = document.querySelector(".main-header"); // Already declared at the top
+  if (header) { // Check if header exists to prevent errors
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+  }
+
+  // ===================================
+  // Custom Cursor Logic
+  // ===================================
+  const cursorDot = document.querySelector(".cursor-dot");
+  const cursorOutline = document.querySelector(".cursor-outline");
+
+  if (cursorDot && cursorOutline) {
+    window.addEventListener("mousemove", (e) => {
+      const posX = e.clientX;
+      const posY = e.clientY;
+
+      // Dot follows immediately
+      cursorDot.style.left = `${posX}px`;
+      cursorDot.style.top = `${posY}px`;
+
+      // Outline follows with slight delay (animation in CSS)
+      cursorOutline.animate({
+        left: `${posX}px`,
+        top: `${posY}px`
+      }, { duration: 500, fill: "forwards" });
+    });
+  }
+
+  // ===================================
   // Scroll Fade-In Animation (Intersection Observer)
   // ===================================
-  const fadeElements = document.querySelectorAll(".fade-in-up");
+  const fadeElements = document.querySelectorAll(".fade-in-up, .reveal-on-scroll");
   if (fadeElements.length > 0) {
     const observerOptions = {
       threshold: 0.15,
@@ -266,12 +313,12 @@ document.addEventListener("DOMContentLoaded", () => {
     function showNextTestimonial() {
       // Remove active class from current testimonial
       testimonialCards[currentTestimonial].classList.remove("active");
-      
+
       // Wait for fade-out to complete before showing next
       setTimeout(() => {
         // Move to next testimonial
         currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
-        
+
         // Add active class to new testimonial
         testimonialCards[currentTestimonial].classList.add("active");
       }, transitionDelay);
