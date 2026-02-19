@@ -414,10 +414,14 @@ button {
 
 .hero-slider {
   position: relative;
-  height: 90vh;
   width: 100%;
+  height: auto;
+  aspect-ratio: 16/9; /* Scales with zoom/width */
+  min-height: 600px;
+  max-height: 950px;
   overflow: hidden;
   margin-top: 0;
+  background-color: #000; /* Fallback for contain */
 }
 
 .slider-container {
@@ -2286,6 +2290,61 @@ button {
     min-width: 260px;
     /* Larger items on mobile */
     scroll-snap-align: center;
+  }
+
+  /* Responsive Hero Slider Mobile Fix */
+  .hero-slider {
+    height: auto;
+    aspect-ratio: 16/9;
+    min-height: 250px;
+  }
+
+  .slide-image {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* Centered Content for Mobile */
+  .slide-content {
+     width: 90%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     text-align: center;
+     padding-bottom: 0;
+     text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+  }
+
+  .slide-title {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin-bottom: 10px;
+    line-height: 1.1;
+  }
+
+  .slide-subtitle {
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 5px;
+  }
+
+  .slide-description {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    display: none;
+  }
+
+  .slide-divider {
+    margin: 0 auto 15px auto;
+    width: 40px;
+  }
+
+  .slide.active .slide-divider {
+     transform: scaleX(1);
+  }
+
+  .cta-button {
+      padding: 10px 25px;
+      font-size: 0.8rem;
   }
 }
 
