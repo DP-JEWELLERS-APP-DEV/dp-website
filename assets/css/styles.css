@@ -2328,6 +2328,15 @@ button {
   .ourcrafsld {
     overflow: hidden;
     width: 100%;
+    touch-action: pan-y; /* Allow vertical scrolling through the section without sticking */
+  }
+
+  /* Center and clean up the Our Craftsmanship heading on mobile */
+  .ourcrafsld ~ h2,
+  .row .section-title.dptext {
+    text-align: center !important;
+    width: 100%;
+    display: block;
   }
 
   .custom-grid-wrapper {
@@ -2346,8 +2355,9 @@ button {
     overflow-x: visible; /* Let it overflow the parent wrapper seamlessly */
     scroll-snap-type: none; /* Turn off snapping to prevent animation fighting */
     width: max-content; /* Ensure the flex container expands to actual full length */
-    animation: marqueeScroll 20s linear infinite; /* Sped up from 35s to 25s */
+    animation: marqueeScroll 20s linear infinite;
     padding-bottom: 20px; /* Adjust padding as no real scrollbar is needed */
+    touch-action: pan-y; /* Pass vertical swipes to the page, not the element */
   }
   
   /* Pause on touch so users can examine items if they wish */
@@ -2361,10 +2371,15 @@ button {
   }
 
   .custom-slide-item {
-    min-width: 260px;
-    width: 260px; /* Lock the width so images don't balloon */
-    /* Larger items on mobile */
+    min-width: 210px;
+    width: 210px; /* Reduced for smaller, neater cards on mobile */
     scroll-snap-align: center;
+  }
+
+  .custom-slide-item img {
+    max-height: 220px; /* Cap image height so cards aren't too tall */
+    object-fit: cover;
+    border-radius: 12px;
   }
 
   /* Responsive Hero Slider Mobile Fix */

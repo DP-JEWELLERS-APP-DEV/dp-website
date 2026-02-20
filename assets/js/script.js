@@ -350,13 +350,37 @@ document.addEventListener("DOMContentLoaded", () => {
       const items = Array.from(grid.children);
       items.forEach((item) => {
         const clone = item.cloneNode(true);
-        clone.setAttribute('aria-hidden', 'true'); // Hide from screen readers
+        clone.setAttribute('aria-hidden', 'true');
         grid.appendChild(clone);
       });
       // Add class to trigger CSS animation
       grid.classList.add("marquee-active");
     }
   });
+
+  // ===================================
+  // Fix: Prevent marquee section from stealing vertical scroll on mobile
+  // ===================================
+  const sectionEl = document.querySelector(".ourcrafsld");
+  if (sectionEl) {
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    sectionEl.addEventListener("touchstart", (e) => {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    sectionEl.addEventListener("touchmove", (e) => {
+      const dx = Math.abs(e.touches[0].clientX - touchStartX);
+      const dy = Math.abs(e.touches[0].clientY - touchStartY);
+      // If the swipe is more vertical than horizontal, let the page scroll freely
+      if (dy > dx) {
+        // Don't prevent default — just ensure it bubbles to the window scroller
+        e.stopPropagation();
+      }
+    }, { passive: true });
+  }
 
   // Loading indicator
   document.body.classList.add("loaded");
