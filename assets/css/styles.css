@@ -2325,6 +2325,30 @@ button {
     border-bottom: none;
   }
 
+  /* Trust / DP Promise section: single column on mobile */
+  .trust-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  .trust-card {
+    padding: 28px 20px;
+    text-align: center;
+    border: 1px solid rgba(197, 160, 89, 0.25);
+    border-radius: 12px;
+    background: var(--bg-cream);
+  }
+
+  .trust-title {
+    font-size: 1.1rem;
+    white-space: normal;
+  }
+
+  .trust-description {
+    font-size: 0.9rem;
+  }
+
   .ourcrafsld {
     overflow: hidden;
     width: 100%;
