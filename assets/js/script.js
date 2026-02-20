@@ -38,7 +38,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const allLinks = navLinksContainer.querySelectorAll(".nav-link");
     allLinks.forEach((link) => {
-      link.addEventListener("click", () => {
+      link.addEventListener("click", (e) => {
+        // Don't close menu if clicking a dropdown toggle
+        if (link.parentElement.classList.contains('has-dropdown')) {
+          e.preventDefault();
+          link.parentElement.classList.toggle('active');
+          return;
+        }
         hamburger.classList.remove("active");
         navLinksContainer.classList.remove("active");
       });
@@ -332,6 +338,25 @@ document.addEventListener("DOMContentLoaded", () => {
     // Start auto-rotation
     setInterval(showNextTestimonial, testimonialInterval);
   }
+
+  // ===================================
+  // Mobile Infinite Auto-Scroll Marquee
+  // ===================================
+  const customGrids = document.querySelectorAll(".custom-grid-wrapper");
+  customGrids.forEach((grid) => {
+    // Check if on mobile
+    if (window.innerWidth <= 768) {
+      // Clone children to create a seamless track
+      const items = Array.from(grid.children);
+      items.forEach((item) => {
+        const clone = item.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true'); // Hide from screen readers
+        grid.appendChild(clone);
+      });
+      // Add class to trigger CSS animation
+      grid.classList.add("marquee-active");
+    }
+  });
 
   // Loading indicator
   document.body.classList.add("loaded");

@@ -1,0 +1,16 @@
+# macOS system files
+.DS_Store
+**/.DS_Store
+
+# Temp helper scripts (used for maintenance, not part of site)
+cache_bust.py
+delete_unused_images.py
+find_unused_images.py
+inject_new_images.py
+remove_app_pod.py
+update_layout_speed.py
+update_story_text.py
+
+# General
+*.pyc
+__pycache__/

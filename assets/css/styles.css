@@ -4,29 +4,22 @@
 
 :root {
   /* Color Palette - Ultra Premium Jewel Tones */
-  --bg-primary: #FDF8F0;
-  /* Cream/Ivory */
-  --bg-secondary: #f4ece4;
-  /* Slightly darker cream */
-  --text-primary: #1A1A1A;
-  /* Charcoal */
-  --text-secondary: #555555;
-  --accent-gold: #C5A059;
-  /* Champagne Gold */
-  --accent-gold-dark: #8E6E2D;
-  --accent-gold-light: #EADDC0;
-  --brand-burgundy: #6F1D1B;
-  /* Deep Burgundy */
-  --bg-dark: #0a0a0a;
-  /* Premium Dark Footer */
+  --bg-primary: #FAFAFA; /* Cleaner, more modern white/cream base */
+  --bg-secondary: #F4F1EA; /* Subtle warm grey/cream for contrast areas */
+  --text-primary: #1A1A1A; /* Charcoal */
+  --text-secondary: #666666; /* Softer Charcoal */
+  --accent-gold: #C5A059; /* Champagne Gold */
+  --accent-gold-dark: #A68444; /* Darker Champagne Gold */
+  --accent-gold-light: #EADDC0; /* Light Gold */
+  --brand-burgundy: #4A1514; /* Deeper, richer Burgundy */
+  --bg-dark: #121212; /* Deep Black for Footer */
   --white: #ffffff;
   --black: #000000;
 
   /* Glassmorphism */
-  --glass-bg: rgba(253, 248, 240, 0.85);
-  /* Cream Glass */
-  --glass-border: rgba(197, 160, 89, 0.2);
-  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  --glass-bg: rgba(255, 255, 255, 0.85); /* Cleaner glass */
+  --glass-border: rgba(197, 160, 89, 0.15);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.03);
 
   /* Typography */
   --font-heading: "Playfair Display", serif;
@@ -34,28 +27,40 @@
 
   /* Spacing */
   --container-width: 1440px;
-  --section-padding: 120px 0;
+  --section-padding: 140px 0; /* More breathing room */
   --section-padding-mobile: 80px 0;
 
-  /* Transitions & Shadows */
-  --transition-smooth: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Transitions & Subtle Shadows */
+  --transition-smooth: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: all 0.4s ease;
-  --shadow-soft: 0 15px 40px rgba(0, 0, 0, 0.04);
-  --shadow-premium: 0 30px 80px rgba(111, 29, 27, 0.08);
-  /* Burgundy tinted shadow */
+  
+  /* Extremely subtle, diffused shadows that define luxury */
+  --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.03);
+  --shadow-premium: 0 20px 60px rgba(0, 0, 0, 0.05);
 
   /* Common alias tokens used across pages */
-  --dark-gray: #555555;
+  --dark-gray: var(--text-secondary);
   --medium-gray: #d6d1c8;
-  --light-gray: #f2f2f2;
-  --bg-cream: #fdf6e3;
-  --primary-maroon: #6F1D1B;
+  --light-gray: #f5f5f5;
+  --bg-cream: var(--bg-secondary);
+  --primary-maroon: var(--brand-burgundy);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: var(--section-padding-mobile); /* Fixes mobile padding globally */
+  }
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 html {
@@ -67,10 +72,9 @@ body {
   color: var(--text-primary);
   background-color: var(--bg-primary);
   line-height: 1.7;
-  overflow-x: hidden;
   padding-top: 80px;
   /* Reduced to match new header height */
-  text-align: center;
+  width: 100%;
 }
 
 /* Prevent long strings/URLs from forcing horizontal scroll on mobile */
@@ -156,7 +160,10 @@ button {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: var(--white);
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
   transition: var(--transition-smooth);
 }
 
@@ -165,22 +172,14 @@ button {
 }
 
 /* Main Navbar */
-/* Main Navbar */
 .navbar {
   width: 100%;
-  background-color: var(--white);
-  padding: 12px 0;
-  /* Slightly more breathing room for premium feel */
+  padding: 15px 0; /* More breathing room for premium feel */
   transition: var(--transition-smooth);
-  /* Removed border-bottom to fix pinkish line issue */
 }
 
 .navbar.scrolled {
   padding: 10px 0;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  /* Softer, deeper shadow */
-  background-color: var(--white);
-  border-bottom: none;
 }
 
 .nav-container {
@@ -207,7 +206,7 @@ button {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 30px;
+  gap: 40px; /* Enhanced tracking spacing */
   margin: 0;
   padding: 0;
 }
@@ -217,13 +216,13 @@ button {
   align-items: center;
   justify-content: center;
   flex: 1;
-  gap: 50px;
+  gap: 60px; /* Wide breather */
 }
 
 .nav-link {
   font-size: 0.85rem;
   font-weight: 500;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px; /* Editorial feel */
   text-transform: uppercase;
   position: relative;
   padding: 10px 0;
@@ -235,14 +234,16 @@ button {
   content: "";
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
   width: 0;
   height: 1.5px;
   background-color: var(--accent-gold);
-  transition: width 0.3s ease;
+  transform: translateX(-50%);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after,
+.nav-link.active::after {
   width: 100%;
 }
 
@@ -346,40 +347,7 @@ button {
   padding-left: 30px;
 }
 
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 45px;
-}
-
-.nav-link {
-  font-size: 0.95rem;
-  font-weight: 400;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  position: relative;
-  transition: var(--transition-fast);
-}
-
-.nav-link::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background-color: var(--accent-gold);
-  transition: width 0.3s ease;
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: 100%;
-}
-
-.nav-link:hover {
-  color: var(--accent-gold);
-}
+/* Deleted duplicate nav rules */
 
 /* Hamburger Menu */
 .hamburger {
@@ -456,11 +424,11 @@ button {
   background-size: cover;
   background-position: center;
   transform: scale(1);
-  transition: transform 6s ease-out;
+  transition: transform 12s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth, long Ken Burns */
 }
 
 .slide.active .slide-image {
-  transform: scale(1.08);
+  transform: scale(1.06); /* Subtle zoom */
 }
 
 /* Soft Editorial Overlay - Radial Gradient */
@@ -496,8 +464,8 @@ button {
 .slide-description,
 .slide-btns {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(40px); /* Slightly deeper start */
+  transition: all 1.8s cubic-bezier(0.16, 1, 0.3, 1); /* Slower, majestic reveal */
 }
 
 .slide.active .slide-subtitle {
@@ -695,17 +663,17 @@ button {
 
 .category-card {
   background-color: var(--white);
-  border-radius: 4px;
+  border-radius: 2px; /* Sharper edges */
   overflow: hidden;
   cursor: pointer;
   transition: var(--transition-smooth);
   box-shadow: var(--shadow-soft);
   position: relative;
-  border: 1px solid rgba(0, 0, 0, 0.03);
+  border: none; /* No border, rely on shadow */
 }
 
 .category-card:hover {
-  transform: translateY(-10px) scale(1.02);
+  transform: translateY(-8px); /* More subtle lift */
   box-shadow: var(--shadow-premium);
 }
 
@@ -784,17 +752,15 @@ button {
 .product-card {
   background: var(--white);
   border: none;
-  /* Removed border */
-  border-radius: 4px;
-  padding: 15px;
+  border-radius: 2px;
+  padding: 25px 15px; /* More vertical breathing room */
   text-align: center;
-  transition: all 0.4s ease;
+  transition: var(--transition-smooth);
   position: relative;
 }
 
 .product-card:hover {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  /* Soft elevation */
+  box-shadow: var(--shadow-premium);
   transform: translateY(-5px);
 }
 
@@ -1062,7 +1028,7 @@ button {
 .newsletter-form-inline .input-wrapper {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--accent-gold);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.4);
   padding: 10px 0;
   background: transparent;
   max-width: 400px;
@@ -1232,13 +1198,18 @@ button {
 .collection-card {
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 2px;
   background: var(--white);
   box-shadow: var(--shadow-soft);
   transition: var(--transition-smooth);
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 25px;
   display: block;
+}
+
+.collection-card:hover {
+  box-shadow: var(--shadow-premium);
+  transform: translateY(-5px);
 }
 
 .collection-card.wide {
@@ -1318,7 +1289,8 @@ button {
   .nav-links-outer {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
+    transform: translateX(100%);
     width: 280px;
     height: 100vh;
     background: var(--white);
@@ -1329,10 +1301,11 @@ button {
     z-index: 1000;
     display: flex;
     gap: 0;
+    overflow-y: auto; /* allow scrolling if menu gets too tall */
   }
 
   .nav-links-outer.active {
-    right: 0;
+    transform: translateX(0);
   }
 
   .nav-links-outer .nav-links {
@@ -1343,6 +1316,31 @@ button {
 
   .nav-links-outer .nav-left {
     margin-bottom: 20px;
+  }
+
+  /* Mobile Dropdown Logic */
+  .has-dropdown .dropdown-menu {
+    position: static; /* flow naturally in the document */
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    min-width: 100%;
+    box-shadow: none;
+    border-top: none;
+    padding: 0;
+    margin-top: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease, margin 0.4s ease;
+    border-left: 2px solid var(--accent-gold);
+    margin-left: 10px;
+  }
+
+  .has-dropdown.active .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    max-height: 400px;
+    padding: 10px 0;
+    margin-top: 10px;
   }
 
   .logo img {
@@ -1525,6 +1523,12 @@ button {
     gap: 30px;
   }
 
+  .story-text {
+    padding: 30px 25px;
+    margin-right: 0;
+    border-left: 4px solid var(--accent-gold);
+  }
+
   .cta-button {
     padding: 12px 25px;
     font-size: 0.8rem;
@@ -1614,12 +1618,18 @@ button {
 
 .timeline-content {
   width: 85%;
-  padding: 30px;
+  padding: 40px;
   background: var(--white);
-  border-radius: 8px;
-  box-shadow: var(--shadow-premium);
+  border-radius: 12px;
+  border-top: 4px solid var(--accent-gold);
+  box-shadow: var(--shadow-soft);
   position: relative;
-  transition: var(--transition-smooth);
+  transition: all 0.4s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(197, 160, 89, 0.15);
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
@@ -1654,57 +1664,84 @@ button {
 }
 
 .timeline-images {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .timeline-img-wrapper {
-  border-radius: 4px;
+  border-radius: 8px;
   overflow: hidden;
-  height: 220px;
+  height: auto;
   box-shadow: var(--shadow-soft);
-  transition: var(--transition-fast);
+  transition: transform 0.4s ease;
   background-color: var(--bg-secondary);
+}
+
+.timeline-img-wrapper:hover {
+  transform: scale(1.02);
 }
 
 .timeline-img-wrapper img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: 450px;
   object-fit: cover;
+  display: block;
 }
 
 /* Responsive Timeline */
 @media (max-width: 992px) {
   .timeline-section::before {
-    left: 30px;
+    left: 20px; /* Move line closer to edge */
   }
 
   .timeline-item {
     justify-content: flex-start;
     padding-right: 0;
-    padding-left: 80px;
-    margin-bottom: 80px;
+    padding-left: 60px; /* Reduced padding-left for more text space */
+    margin-bottom: 60px;
   }
 
   .timeline-item:nth-child(even) {
-    padding-left: 80px;
-  }
-
-  .dot-line {
-    left: 30px;
+    padding-left: 60px;
   }
 
   .timeline-dot {
-    left: 20px;
+    left: 10px; /* move dots closer to edge */
   }
 
-  .timeline-item {
-    padding-left: 60px;
+  .timeline-content {
+    width: 100%; /* Use full available width */
+    padding: 20px;
   }
 
   .timeline-year {
     font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .timeline-item {
+    padding-left: 45px; /* Extremely tight on mobile */
+  }
+  
+  .timeline-item:nth-child(even) {
+    padding-left: 45px;
+  }
+  
+  .timeline-section::before {
+    left: 15px;
+  }
+  
+  .timeline-dot {
+    left: 5px;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .story-hero .section-title {
+    font-size: 2rem; /* Ensure title doesn't wrap off-screen */
   }
 }
 
@@ -1871,6 +1908,21 @@ button {
   color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.testimonial-text::before {
+  content: "“";
+  font-family: var(--font-heading);
+  font-size: 8rem;
+  color: var(--accent-gold);
+  opacity: 0.15;
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
 }
 
 .customer-name {
@@ -2148,11 +2200,9 @@ button {
 
 .custom-border-right {
   width: 100%;
-  border-right: 1px solid rgba(197, 160, 89, 0.4);
-  /* Gold Separator */
+  border-right: 1px solid rgba(197, 160, 89, 0.15); /* Subtler Gold Separator */
   height: 100%;
   min-height: 40px;
-  /* Ensure visible height */
   display: flex;
   justify-content: center;
 }
@@ -2205,9 +2255,9 @@ button {
   overflow-x: auto;
   /* Allow scroll on small screens */
   padding-bottom: 20px;
-  margin: 0 -15px;
-  /* Offset container padding for full bleed scroll */
-  padding: 0 15px 20px 15px;
+  margin: 0;
+  /* Removed negative margin */
+  padding: 0 0 20px 0;
 }
 
 .custom-slide-item {
@@ -2275,6 +2325,11 @@ button {
     border-bottom: none;
   }
 
+  .ourcrafsld {
+    overflow: hidden;
+    width: 100%;
+  }
+
   .custom-grid-wrapper {
     display: flex;
     /* Horizontal Scroll on Mobile */
@@ -2286,23 +2341,43 @@ button {
     /* Space for scrollbar */
   }
 
+  /* Infinite Scrolling Marquee on Mobile */
+  .custom-grid-wrapper.marquee-active {
+    overflow-x: visible; /* Let it overflow the parent wrapper seamlessly */
+    scroll-snap-type: none; /* Turn off snapping to prevent animation fighting */
+    width: max-content; /* Ensure the flex container expands to actual full length */
+    animation: marqueeScroll 20s linear infinite; /* Sped up from 35s to 25s */
+    padding-bottom: 20px; /* Adjust padding as no real scrollbar is needed */
+  }
+  
+  /* Pause on touch so users can examine items if they wish */
+  .custom-grid-wrapper.marquee-active:active {
+    animation-play-state: paused;
+  }
+
+  @keyframes marqueeScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 7.5px)); } /* Shift exactly half the track length including gaps */
+  }
+
   .custom-slide-item {
     min-width: 260px;
+    width: 260px; /* Lock the width so images don't balloon */
     /* Larger items on mobile */
     scroll-snap-align: center;
   }
 
   /* Responsive Hero Slider Mobile Fix */
   .hero-slider {
-    height: auto;
-    aspect-ratio: 16/9;
-    min-height: 250px;
+    height: 75vh; /* Much taller, filling most of the screen */
+    min-height: 500px;
+    max-height: 700px;
+    aspect-ratio: auto; /* Remove the strict ratio that squishes it */
   }
 
   .slide-image {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-size: cover; /* Must be cover to fill the taller height */
+    background-position: center 20%; /* Keep focus slightly higher on mobile */
   }
 
   /* Centered Content for Mobile */
@@ -2642,5 +2717,12 @@ h6 {
 
   .benefit-item {
     flex: 1 1 45%;
+  }
+}
+
+/* Base Mobile Enhancements */
+@media (max-width: 768px) {
+  .testimonials-slider {
+    min-height: 380px; /* Accounts for longer text wrapping */
   }
 }
