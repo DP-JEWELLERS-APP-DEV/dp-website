@@ -340,67 +340,59 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ===================================
-  // Mobile Marquee: JS rAF-based (zero touch conflict)
+  // Mobile Marquee — JS rAF, math-based width (no DOM measurement)
   // ===================================
+  const ITEM_W = 200; // px — must match CSS .custom-slide-item width
+  const GAP    = 15;  // px — must match CSS gap
+
   if (window.innerWidth <= 768) {
-    const grids = document.querySelectorAll(".custom-grid-wrapper");
-    grids.forEach((grid) => {
-      // 1. Clone items for seamless loop
+    document.querySelectorAll(".custom-grid-wrapper").forEach((grid) => {
       const origItems = Array.from(grid.children);
-      origItems.forEach((item) => {
+      const n = origItems.length;
+
+      // Force each item to its explicit width so measurement is irrelevant
+      origItems.forEach(item => { item.style.width = ITEM_W + "px"; });
+
+      // Clone for seamless loop
+      origItems.forEach(item => {
         const clone = item.cloneNode(true);
         clone.setAttribute("aria-hidden", "true");
+        clone.style.width = ITEM_W + "px";
         grid.appendChild(clone);
       });
 
-      // 2. Measure half-width (the original set width)
-      //    We do this after cloning so layout is correct
-      let halfWidth = 0;
-      const measureHalf = () => {
-        let w = 0;
-        origItems.forEach(item => { w += item.offsetWidth + 15; }); // 15 = gap
-        halfWidth = w;
-      };
-      measureHalf();
-      window.addEventListener("resize", measureHalf, { passive: true });
+      // halfWidth = sum of all ORIGINAL items (width + gap), minus one trailing gap
+      const halfWidth = n * ITEM_W + (n - 1) * GAP;
 
-      // 3. Set the grid to flex with no overflow issues
-      grid.style.display = "flex";
-      grid.style.gap = "15px";
-      grid.style.flexWrap = "nowrap";
-      grid.style.willChange = "transform";
+      // Flex container — no overflow, no width:max-content
+      grid.style.cssText = [
+        "display:flex",
+        "flex-wrap:nowrap",
+        "gap:" + GAP + "px",
+        "will-change:transform",
+        "touch-action:pan-y",
+      ].join(";");
 
-      // 4. Run rAF loop
       let offset = 0;
       let paused = false;
-      let rafId;
 
       const tick = () => {
         if (!paused) {
-          offset += 0.5; // px per frame (~30px/s at 60fps)
-          if (halfWidth > 0 && offset >= halfWidth) {
-            offset -= halfWidth; // seamless wrap
-          }
-          grid.style.transform = `translateX(-${offset}px)`;
+          offset += 0.4; // ~24 px/s at 60fps — smooth reading speed
+          if (offset >= halfWidth + GAP) offset -= halfWidth + GAP;
+          grid.style.transform = "translateX(-" + offset + "px)";
         }
-        rafId = requestAnimationFrame(tick);
+        requestAnimationFrame(tick);
       };
-      rafId = requestAnimationFrame(tick);
+      requestAnimationFrame(tick);
 
-      // 5. Pause while user actively touches the section (optional UX)
-      const section = grid.closest(".ourcrafsld");
-      if (section) {
-        section.addEventListener("touchstart", () => { paused = true; }, { passive: true });
-        section.addEventListener("touchend",   () => { paused = false; }, { passive: true });
+      // Pause on touch so vertical scrollers don't animate underneath finger
+      const wrap = grid.closest(".ourcrafsld");
+      if (wrap) {
+        wrap.addEventListener("touchstart", () => { paused = true;  }, { passive: true });
+        wrap.addEventListener("touchend",   () => { paused = false; }, { passive: true });
+        wrap.addEventListener("touchcancel",() => { paused = false; }, { passive: true });
       }
-    });
-  } else {
-    // Desktop: original simple flex grid, no marquee
-    const grids = document.querySelectorAll(".custom-grid-wrapper");
-    grids.forEach((grid) => {
-      grid.style.display = "flex";
-      grid.style.flexWrap = "wrap";
-      grid.style.gap = "15px";
     });
   }
 
