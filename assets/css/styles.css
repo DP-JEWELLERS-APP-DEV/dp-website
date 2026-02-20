@@ -2331,12 +2331,15 @@ button {
     touch-action: pan-y; /* Allow vertical scrolling through the section without sticking */
   }
 
-  /* Center and clean up the Our Craftsmanship heading on mobile */
-  .ourcrafsld ~ h2,
+  /* Center and reduce font size of the Our Craftsmanship heading on mobile */
   .row .section-title.dptext {
     text-align: center !important;
     width: 100%;
     display: block;
+    font-size: 1.4rem !important;  /* Smaller so the full word fits on one line */
+    white-space: nowrap;           /* Never wrap mid-word */
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .custom-grid-wrapper {
@@ -2352,12 +2355,15 @@ button {
 
   /* Infinite Scrolling Marquee on Mobile */
   .custom-grid-wrapper.marquee-active {
-    overflow-x: visible; /* Let it overflow the parent wrapper seamlessly */
-    scroll-snap-type: none; /* Turn off snapping to prevent animation fighting */
-    width: max-content; /* Ensure the flex container expands to actual full length */
+    overflow-x: visible;
+    scroll-snap-type: none;
+    width: max-content;
     animation: marqueeScroll 20s linear infinite;
-    padding-bottom: 20px; /* Adjust padding as no real scrollbar is needed */
-    touch-action: pan-y; /* Pass vertical swipes to the page, not the element */
+    padding-bottom: 20px;
+    touch-action: pan-y;
+    will-change: transform;           /* Promote to GPU layer for smooth animation */
+    -webkit-backface-visibility: hidden; /* iOS GPU compositing fix */
+    backface-visibility: hidden;
   }
   
   /* Pause on touch so users can examine items if they wish */
