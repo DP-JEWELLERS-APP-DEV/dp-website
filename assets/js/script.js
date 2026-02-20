@@ -340,46 +340,68 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ===================================
-  // Mobile Infinite Auto-Scroll Marquee
+  // Mobile Marquee: JS rAF-based (zero touch conflict)
   // ===================================
-  const customGrids = document.querySelectorAll(".custom-grid-wrapper");
-  customGrids.forEach((grid) => {
-    // Check if on mobile
-    if (window.innerWidth <= 768) {
-      // Clone children to create a seamless track
-      const items = Array.from(grid.children);
-      items.forEach((item) => {
+  if (window.innerWidth <= 768) {
+    const grids = document.querySelectorAll(".custom-grid-wrapper");
+    grids.forEach((grid) => {
+      // 1. Clone items for seamless loop
+      const origItems = Array.from(grid.children);
+      origItems.forEach((item) => {
         const clone = item.cloneNode(true);
-        clone.setAttribute('aria-hidden', 'true');
+        clone.setAttribute("aria-hidden", "true");
         grid.appendChild(clone);
       });
-      // Add class to trigger CSS animation
-      grid.classList.add("marquee-active");
-    }
-  });
 
-  // ===================================
-  // Fix: Prevent marquee section from stealing vertical scroll on mobile
-  // ===================================
-  const sectionEl = document.querySelector(".ourcrafsld");
-  if (sectionEl) {
-    let touchStartX = 0;
-    let touchStartY = 0;
+      // 2. Measure half-width (the original set width)
+      //    We do this after cloning so layout is correct
+      let halfWidth = 0;
+      const measureHalf = () => {
+        let w = 0;
+        origItems.forEach(item => { w += item.offsetWidth + 15; }); // 15 = gap
+        halfWidth = w;
+      };
+      measureHalf();
+      window.addEventListener("resize", measureHalf, { passive: true });
 
-    sectionEl.addEventListener("touchstart", (e) => {
-      touchStartX = e.touches[0].clientX;
-      touchStartY = e.touches[0].clientY;
-    }, { passive: true });
+      // 3. Set the grid to flex with no overflow issues
+      grid.style.display = "flex";
+      grid.style.gap = "15px";
+      grid.style.flexWrap = "nowrap";
+      grid.style.willChange = "transform";
 
-    sectionEl.addEventListener("touchmove", (e) => {
-      const dx = Math.abs(e.touches[0].clientX - touchStartX);
-      const dy = Math.abs(e.touches[0].clientY - touchStartY);
-      // If the swipe is more vertical than horizontal, let the page scroll freely
-      if (dy > dx) {
-        // Don't prevent default — just ensure it bubbles to the window scroller
-        e.stopPropagation();
+      // 4. Run rAF loop
+      let offset = 0;
+      let paused = false;
+      let rafId;
+
+      const tick = () => {
+        if (!paused) {
+          offset += 0.5; // px per frame (~30px/s at 60fps)
+          if (halfWidth > 0 && offset >= halfWidth) {
+            offset -= halfWidth; // seamless wrap
+          }
+          grid.style.transform = `translateX(-${offset}px)`;
+        }
+        rafId = requestAnimationFrame(tick);
+      };
+      rafId = requestAnimationFrame(tick);
+
+      // 5. Pause while user actively touches the section (optional UX)
+      const section = grid.closest(".ourcrafsld");
+      if (section) {
+        section.addEventListener("touchstart", () => { paused = true; }, { passive: true });
+        section.addEventListener("touchend",   () => { paused = false; }, { passive: true });
       }
-    }, { passive: true });
+    });
+  } else {
+    // Desktop: original simple flex grid, no marquee
+    const grids = document.querySelectorAll(".custom-grid-wrapper");
+    grids.forEach((grid) => {
+      grid.style.display = "flex";
+      grid.style.flexWrap = "wrap";
+      grid.style.gap = "15px";
+    });
   }
 
   // Loading indicator

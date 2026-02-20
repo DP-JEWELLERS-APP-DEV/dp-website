@@ -2342,50 +2342,27 @@ button {
     text-overflow: ellipsis;
   }
 
+  /* Marquee track — JS drives the translateX, CSS just sets up the flex container */
   .custom-grid-wrapper {
     display: flex;
-    /* Horizontal Scroll on Mobile */
     flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
     gap: 15px;
-    padding-bottom: 30px;
-    /* Space for scrollbar */
-  }
-
-  /* Infinite Scrolling Marquee on Mobile */
-  .custom-grid-wrapper.marquee-active {
-    overflow-x: visible;
-    scroll-snap-type: none;
-    width: max-content;
-    animation: marqueeScroll 20s linear infinite;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
+    overflow: visible;
     touch-action: pan-y;
-    will-change: transform;           /* Promote to GPU layer for smooth animation */
-    -webkit-backface-visibility: hidden; /* iOS GPU compositing fix */
-    backface-visibility: hidden;
-  }
-  
-  /* Pause on touch so users can examine items if they wish */
-  .custom-grid-wrapper.marquee-active:active {
-    animation-play-state: paused;
-  }
-
-  @keyframes marqueeScroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-50% - 7.5px)); } /* Shift exactly half the track length including gaps */
   }
 
   .custom-slide-item {
-    min-width: 210px;
-    width: 210px; /* Reduced for smaller, neater cards on mobile */
-    scroll-snap-align: center;
+    flex: 0 0 auto;
+    width: 200px;
   }
 
   .custom-slide-item img {
-    max-height: 220px; /* Cap image height so cards aren't too tall */
+    width: 100%;
+    height: 200px;
     object-fit: cover;
     border-radius: 12px;
+    display: block;
   }
 
   /* Responsive Hero Slider Mobile Fix */
