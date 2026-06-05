@@ -1148,10 +1148,24 @@ button {
   transform: translateY(-5px);
 }
 
+.copyright-detailed {
+  margin-top: 20px;
+}
+
 .copyright-detailed p {
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.4);
   margin-bottom: 5px;
+}
+
+.copyright-detailed a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.copyright-detailed a:hover {
+  color: var(--accent-gold);
 }
 
 .footer-bottom-right {
