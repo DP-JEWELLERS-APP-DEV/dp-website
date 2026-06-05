@@ -3,7 +3,9 @@
    =================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DP Jewellers Script Initializing...");
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
 
   // ===================================
   // Navbar & Navigation
@@ -15,17 +17,72 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinksContainer = document.getElementById("navLinks");
   const sections = document.querySelectorAll("section[id]");
 
-  // Navbar Scroll Behavior
-  if (navbar && header) {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
-        header.classList.add("is-sticky");
-      } else {
-        navbar.classList.remove("scrolled");
-        header.classList.remove("is-sticky");
+  // Cached section positions (refreshed on load/resize)
+  let sectionMetrics = [];
+
+  function cacheSectionMetrics() {
+    sectionMetrics = Array.from(sections).map((section) => ({
+      id: section.getAttribute("id"),
+      top: section.offsetTop - 100,
+      bottom: section.offsetTop - 100 + section.offsetHeight,
+    }));
+  }
+
+  function updateHeaderOnScroll() {
+    const scrolled = window.scrollY > 50;
+    if (navbar) navbar.classList.toggle("scrolled", scrolled);
+    if (header) {
+      header.classList.toggle("is-sticky", scrolled);
+      header.classList.toggle("scrolled", scrolled);
+    }
+  }
+
+  function updateActiveLink() {
+    const scrollY = window.pageYOffset;
+    let activeId = null;
+
+    for (const metric of sectionMetrics) {
+      if (scrollY > metric.top && scrollY <= metric.bottom) {
+        activeId = metric.id;
+        break;
       }
+    }
+
+    if (!activeId) return;
+
+    navLinks.forEach((link) => {
+      link.classList.toggle(
+        "active",
+        link.getAttribute("href") === `#${activeId}`,
+      );
     });
+  }
+
+  function onScroll() {
+    updateHeaderOnScroll();
+    if (sectionMetrics.length > 0) updateActiveLink();
+  }
+
+  if (navbar || header || sections.length > 0) {
+    cacheSectionMetrics();
+    window.addEventListener("resize", cacheSectionMetrics, { passive: true });
+
+    let scrollTicking = false;
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!scrollTicking) {
+          scrollTicking = true;
+          requestAnimationFrame(() => {
+            onScroll();
+            scrollTicking = false;
+          });
+        }
+      },
+      { passive: true },
+    );
+
+    onScroll();
   }
 
   // Mobile Menu Toggle
@@ -39,10 +96,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const allLinks = navLinksContainer.querySelectorAll(".nav-link");
     allLinks.forEach((link) => {
       link.addEventListener("click", (e) => {
-        // Don't close menu if clicking a dropdown toggle
-        if (link.parentElement.classList.contains('has-dropdown')) {
+        if (link.parentElement.classList.contains("has-dropdown")) {
           e.preventDefault();
-          link.parentElement.classList.toggle('active');
+          link.parentElement.classList.toggle("active");
           return;
         }
         hamburger.classList.remove("active");
@@ -61,30 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Active Navigation Link on Scroll
-  function updateActiveLink() {
-    const scrollY = window.pageYOffset;
-    sections.forEach((section) => {
-      const sectionHeight = section.offsetHeight;
-      const sectionTop = section.offsetTop - 100;
-      const sectionId = section.getAttribute("id");
-
-      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-        navLinks.forEach((link) => {
-          link.classList.remove("active");
-          if (link.getAttribute("href") === `#${sectionId}`) {
-            link.classList.add("active");
-          }
-        });
-      }
-    });
-  }
-  if (sections.length > 0) {
-    window.addEventListener("scroll", updateActiveLink);
-  }
-
   // ===================================
-  // Hero Slider logic (Ultra-Stable Version)
+  // Hero Slider logic
   // ===================================
   const sliderSection = document.querySelector(".hero-slider");
   const slides = document.querySelectorAll(".slide");
@@ -93,35 +127,20 @@ document.addEventListener("DOMContentLoaded", () => {
   if (sliderSection && slides.length > 0) {
     let currentSlide = 0;
     let slideInterval;
-    const intervalTime = 3000; // Increased to 3 seconds for stability
-
-    console.log(
-      "Slider: Initializing with 3s interval. Found",
-      slides.length,
-      "slides.",
-    );
+    const intervalTime = 3000;
 
     function nextSlide() {
-      const oldSlide = currentSlide;
-      // Remove active class from current slide and dot
       slides[currentSlide].classList.remove("active");
       if (dots[currentSlide]) dots[currentSlide].classList.remove("active");
 
-      // Move to next slide
       currentSlide = (currentSlide + 1) % slides.length;
 
-      // Add active class to new slide and dot
       slides[currentSlide].classList.add("active");
       if (dots[currentSlide]) dots[currentSlide].classList.add("active");
-
-      console.log(
-        `Slider: Moved from ${oldSlide} to ${currentSlide} at ${new Date().toLocaleTimeString()}`,
-      );
     }
 
     function goToSlide(index) {
       if (index === currentSlide) return;
-      console.log("Slider: Manually going to slide", index);
       slides[currentSlide].classList.remove("active");
       if (dots[currentSlide]) dots[currentSlide].classList.remove("active");
       currentSlide = index;
@@ -133,14 +152,10 @@ document.addEventListener("DOMContentLoaded", () => {
     function startSliderInterval() {
       stopSliderInterval();
       slideInterval = setInterval(nextSlide, intervalTime);
-      console.log("Slider: Interval started.");
     }
 
     function stopSliderInterval() {
-      if (slideInterval) {
-        clearInterval(slideInterval);
-        console.log("Slider: Interval stopped.");
-      }
+      if (slideInterval) clearInterval(slideInterval);
     }
 
     function resetSliderInterval() {
@@ -148,40 +163,59 @@ document.addEventListener("DOMContentLoaded", () => {
       startSliderInterval();
     }
 
-    // Dot Click Event
     dots.forEach((dot, index) => {
       dot.addEventListener("click", () => goToSlide(index));
     });
 
-    // Provide a global way to trigger next slide for manual testing
     window.forceSliderNext = nextSlide;
-
-    // Initial Start after a short delay to ensure everything is settled
     setTimeout(startSliderInterval, 500);
   }
 
   // ===================================
-  // Header Scroll Effect
+  // Hero Video — pause when off-screen
   // ===================================
-  // The 'header' variable is already declared globally at the top of the DOMContentLoaded listener.
-  // The 'header' scroll behavior is already handled in the 'Navbar Scroll Behavior' section.
-  // This block is redundant if the existing 'Navbar Scroll Behavior' is intended to cover the header's 'scrolled' class.
-  // If this is meant to be a separate, additional effect, ensure 'header' is not re-declared.
-  // For now, assuming this is an *additional* effect or a refactoring, and keeping the original header declaration.
-  // If the intent is to replace the header part of 'Navbar Scroll Behavior', that section should be modified.
-  // As per instruction, adding this block as provided.
-  // Note: The original 'Navbar Scroll Behavior' also adds/removes 'is-sticky'. This new block only handles 'scrolled'.
-  // If the goal is to consolidate, the existing 'Navbar Scroll Behavior' should be updated.
-  // For now, faithfully adding the provided code.
-  // const header = document.querySelector(".main-header"); // Already declared at the top
-  if (header) { // Check if header exists to prevent errors
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 50) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
-      }
-    });
+  const videoHero = document.querySelector(".video-hero");
+  const heroVideo = videoHero?.querySelector("video");
+
+  if (heroVideo && !prefersReducedMotion) {
+    const videoObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            heroVideo.play().catch(() => {});
+          } else {
+            heroVideo.pause();
+          }
+        });
+      },
+      { threshold: 0.25 },
+    );
+    videoObserver.observe(videoHero);
+  } else if (heroVideo && prefersReducedMotion) {
+    heroVideo.pause();
+    heroVideo.removeAttribute("autoplay");
+  }
+
+  // ===================================
+  // Lazy-load iframes (YouTube, Maps)
+  // ===================================
+  const lazyIframes = document.querySelectorAll("iframe[data-src]");
+  if (lazyIframes.length > 0) {
+    const iframeObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const iframe = entry.target;
+          if (iframe.dataset.src) {
+            iframe.src = iframe.dataset.src;
+            iframe.removeAttribute("data-src");
+          }
+          iframeObserver.unobserve(iframe);
+        });
+      },
+      { rootMargin: "200px 0px" },
+    );
+    lazyIframes.forEach((iframe) => iframeObserver.observe(iframe));
   }
 
   // ===================================
@@ -195,44 +229,40 @@ document.addEventListener("DOMContentLoaded", () => {
       const posX = e.clientX;
       const posY = e.clientY;
 
-      // Dot follows immediately
       cursorDot.style.left = `${posX}px`;
       cursorDot.style.top = `${posY}px`;
 
-      // Outline follows with slight delay (animation in CSS)
-      cursorOutline.animate({
-        left: `${posX}px`,
-        top: `${posY}px`
-      }, { duration: 500, fill: "forwards" });
+      cursorOutline.animate(
+        { left: `${posX}px`, top: `${posY}px` },
+        { duration: 500, fill: "forwards" },
+      );
     });
   }
 
   // ===================================
   // Scroll Fade-In Animation (Intersection Observer)
   // ===================================
-  const fadeElements = document.querySelectorAll(".fade-in-up, .reveal-on-scroll");
+  const fadeElements = document.querySelectorAll(
+    ".fade-in-up, .reveal-on-scroll",
+  );
   if (fadeElements.length > 0) {
-    const observerOptions = {
-      threshold: 0.15,
-      rootMargin: "0px 0px -50px 0px",
-    };
-    const fadeInObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
+    const fadeInObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
             entry.target.classList.add("visible");
-          }, index * 100);
-          fadeInObserver.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
+            fadeInObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" },
+    );
     fadeElements.forEach((element) => fadeInObserver.observe(element));
   }
 
   // ===================================
   // Interactive Elements & Buttons
   // ===================================
-  // Wishlist Button
   const wishlistButtons = document.querySelectorAll(".wishlist-btn");
   wishlistButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
@@ -253,7 +283,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Newsletter Form
   const newsletterForm = document.querySelector(".newsletter-form");
   if (newsletterForm) {
     newsletterForm.addEventListener("submit", (e) => {
@@ -273,7 +302,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Scroll To Top
   const scrollToTopBtn = document.getElementById("scrollToTop");
   if (scrollToTopBtn) {
     scrollToTopBtn.addEventListener("click", () => {
@@ -281,7 +309,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Smooth Scroll for Anchors
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
@@ -289,82 +316,96 @@ document.addEventListener("DOMContentLoaded", () => {
       if (targetId === "#") return;
       const targetSection = document.querySelector(targetId);
       if (targetSection) {
+        const headerOffset = document.body.classList.contains("home-page")
+          ? window.innerWidth > 992 ? 112 : 80
+          : 80;
         window.scrollTo({
-          top: targetSection.offsetTop - 80,
+          top: targetSection.offsetTop - headerOffset,
           behavior: "smooth",
         });
       }
     });
   });
 
-  // Global Hover Transitions
   const hoverElements = document.querySelectorAll(
     ".cta-button, .product-card, .category-card",
   );
   hoverElements.forEach((el) => {
     el.addEventListener("mouseenter", () => {
-      el.style.transition = "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)";
+      el.style.transition = "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1)";
     });
   });
 
   // ===================================
-  // Testimonials Slider (Auto-Rotate Every 10 Seconds)
+  // Testimonials Slider + Dots
   // ===================================
-  const testimonialCards = document.querySelectorAll(".testimonial-card");
+  const testimonialCards = document.querySelectorAll(".testimonials-showcase .testimonial-card");
+  const testimonialDots = document.querySelectorAll(".testimonial-dot");
+
   if (testimonialCards.length > 0) {
     let currentTestimonial = 0;
-    const testimonialInterval = 10000; // 10 seconds
-    const transitionDelay = 300; // Small delay to ensure smooth transition
+    const testimonialInterval = 10000;
+    let testimonialTimer;
+
+    function goToTestimonial(index) {
+      if (index === currentTestimonial) return;
+      testimonialCards[currentTestimonial].classList.remove("active");
+      if (testimonialDots[currentTestimonial]) {
+        testimonialDots[currentTestimonial].classList.remove("active");
+      }
+      currentTestimonial = index;
+      testimonialCards[currentTestimonial].classList.add("active");
+      if (testimonialDots[currentTestimonial]) {
+        testimonialDots[currentTestimonial].classList.add("active");
+      }
+    }
 
     function showNextTestimonial() {
-      // Remove active class from current testimonial
-      testimonialCards[currentTestimonial].classList.remove("active");
-
-      // Wait for fade-out to complete before showing next
-      setTimeout(() => {
-        // Move to next testimonial
-        currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
-
-        // Add active class to new testimonial
-        testimonialCards[currentTestimonial].classList.add("active");
-      }, transitionDelay);
+      goToTestimonial((currentTestimonial + 1) % testimonialCards.length);
     }
 
-    // Initialize: Show first testimonial
-    if (testimonialCards[0]) {
-      testimonialCards[0].classList.add("active");
+    function startTestimonialTimer() {
+      clearInterval(testimonialTimer);
+      testimonialTimer = setInterval(showNextTestimonial, testimonialInterval);
     }
 
-    // Start auto-rotation
-    setInterval(showNextTestimonial, testimonialInterval);
+    testimonialDots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        const index = parseInt(dot.dataset.index, 10);
+        if (!Number.isNaN(index)) {
+          goToTestimonial(index);
+          startTestimonialTimer();
+        }
+      });
+    });
+
+    startTestimonialTimer();
   }
 
   // ===================================
-  // Mobile Marquee — JS rAF, math-based width (no DOM measurement)
+  // Mobile Marquee — pause when off-screen
   // ===================================
-  const ITEM_W = 200; // px — must match CSS .custom-slide-item width
-  const GAP    = 15;  // px — must match CSS gap
+  const ITEM_W = 200;
+  const GAP = 15;
 
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth <= 768 && !prefersReducedMotion) {
     document.querySelectorAll(".custom-grid-wrapper").forEach((grid) => {
       const origItems = Array.from(grid.children);
       const n = origItems.length;
 
-      // Force each item to its explicit width so measurement is irrelevant
-      origItems.forEach(item => { item.style.width = ITEM_W + "px"; });
+      origItems.forEach((item) => {
+        item.style.width = ITEM_W + "px";
+      });
 
-      // Clone for seamless loop
-      origItems.forEach(item => {
+      origItems.forEach((item) => {
         const clone = item.cloneNode(true);
         clone.setAttribute("aria-hidden", "true");
         clone.style.width = ITEM_W + "px";
         grid.appendChild(clone);
       });
 
-      // halfWidth = sum of all ORIGINAL items (width + gap), minus one trailing gap
       const halfWidth = n * ITEM_W + (n - 1) * GAP;
 
-      // Flex container — no overflow, no width:max-content
       grid.style.cssText = [
         "display:flex",
         "flex-wrap:nowrap",
@@ -375,10 +416,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       let offset = 0;
       let paused = false;
+      let touchPaused = false;
+      let inViewport = true;
 
       const tick = () => {
-        if (!paused) {
-          offset += 0.4; // ~24 px/s at 60fps — smooth reading speed
+        if (!paused && !touchPaused && inViewport) {
+          offset += 0.4;
           if (offset >= halfWidth + GAP) offset -= halfWidth + GAP;
           grid.style.transform = "translateX(-" + offset + "px)";
         }
@@ -386,25 +429,34 @@ document.addEventListener("DOMContentLoaded", () => {
       };
       requestAnimationFrame(tick);
 
-      // Pause on touch so vertical scrollers don't animate underneath finger
       const wrap = grid.closest(".ourcrafsld");
       if (wrap) {
-        wrap.addEventListener("touchstart", () => { paused = true;  }, { passive: true });
-        wrap.addEventListener("touchend",   () => { paused = false; }, { passive: true });
-        wrap.addEventListener("touchcancel",() => { paused = false; }, { passive: true });
+        wrap.addEventListener("touchstart", () => {
+          touchPaused = true;
+        }, { passive: true });
+        wrap.addEventListener("touchend", () => {
+          touchPaused = false;
+        }, { passive: true });
+        wrap.addEventListener("touchcancel", () => {
+          touchPaused = false;
+        }, { passive: true });
+
+        const marqueeObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              inViewport = entry.isIntersecting;
+            });
+          },
+          { threshold: 0.05 },
+        );
+        marqueeObserver.observe(wrap);
       }
+
+      document.addEventListener("visibilitychange", () => {
+        paused = document.hidden;
+      });
     });
   }
 
-  // Loading indicator
   document.body.classList.add("loaded");
-
-  console.log(`
-╔══════════════════════════════════════╗
-║                                      ║
-║         DP JEWELLERS                 ║
-║    Where Elegance Meets Eternity     ║
-║                                      ║
-╚══════════════════════════════════════╝
-  `);
 });

@@ -4,571 +4,549 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DP Jewellers - Timeless Luxury</title>
+  <title>DP Jewellers — Heritage Jewellery Since 1941 | Ballia</title>
+  <meta name="description" content="DP Jewellers — Ballia's trusted heritage jeweller since 1941. Explore our gold, diamond, and bridal collections. Visit our flagship store in Uttar Pradesh." />
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=18" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=22" />
+  <link rel="stylesheet" href="assets/css/home.css?v=23" />
 </head>
 
-<body>
+<body class="home-page">
 
+  <header class="main-header header-over-hero">
+    <div class="header-top-bar desktop-only">
+      <div class="container header-top-inner">
+        <a href="tel:+919005660060" class="header-top-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          090056 60060
+        </a>
+        <span class="header-top-divider">|</span>
+        <a href="#contact-inquiry" class="header-top-link">Visit Our Store</a>
+        <span class="header-top-divider">|</span>
+        <a href="pages/info/contact.html" class="header-top-link">Contact</a>
+      </div>
+    </div>
 
-  <!-- Navigation Menu -->
-  <header class="main-header">
-    <!-- Top Bar Removed -->
-
-    <!-- Main Navigation -->
     <nav class="navbar" id="navbar">
       <div class="container nav-container">
-        <!-- Navigation Links Container -->
         <div class="nav-links-outer" id="navLinks">
-          <!-- Left: Menu Items -->
           <ul class="nav-links nav-left">
             <li><a href="#home" class="nav-link">Home</a></li>
             <li class="has-dropdown">
               <a href="#" class="nav-link">Collections <span class="arrow">▾</span></a>
-              <!-- Dropdown Menu Content -->
               <ul class="dropdown-menu">
                 <li><a href="pages/collections/gold-jewellery.html">Gold Jewellery</a></li>
                 <li><a href="pages/collections/diamond-jewellery.html">Diamond Jewellery</a></li>
                 <li><a href="pages/collections/silver-articles.html">Silver Articles</a></li>
                 <li><a href="pages/collections/platinum.html">Platinum</a></li>
                 <li><a href="pages/collections/gemstones.html">Gemstones</a></li>
+                <li><a href="pages/collections/grand-bridal.html">Grand Bridal</a></li>
               </ul>
             </li>
           </ul>
-
-          <!-- Right: Menu Items -->
           <ul class="nav-links nav-right">
             <li><a href="pages/info/my-story.html" class="nav-link">Our Story</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="#contact-inquiry" class="nav-link">Visit Us</a></li>
           </ul>
         </div>
-
-        <!-- Center: Logo -->
         <div class="logo">
           <a href="#home"><img src="assets/images/DP Logo-01.png" alt="DP Jewellers Logo" /></a>
         </div>
-
-        <!-- Hamburger -->
         <div class="nav-icons">
           <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
           </div>
         </div>
       </div>
     </nav>
   </header>
 
-  <!-- Video Hero Section -->
-  <section class="video-hero" id="home">
-    <div class="video-wrapper">
-      <video src="assets/video/hero-video.mp4" autoplay loop muted playsinline></video>
-      <div class="video-overlay"></div>
-    </div>
-    <div class="video-content container fade-in-up">
-      <h2 class="video-subtitle">A Legacy of Brilliance Since 1941</h2>
-      <h1 class="video-title">Elegance In<br/>Every Motion</h1>
-      <div class="video-divider"></div>
-      <p class="video-description">Crafting moments that last forever with India's most loved designs.</p>
-      <div class="video-btns">
-        <a href="#collections" class="cta-button">Explore Collection</a>
+  <main class="home-main">
+
+    <!-- 1. Hero -->
+    <section class="video-hero" id="home">
+      <div class="video-wrapper">
+        <video src="assets/video/hero-video.mp4" autoplay loop muted playsinline preload="metadata" poster="assets/images/hero-video-poster.jpg"></video>
+        <div class="video-overlay"></div>
       </div>
-    </div>
-    <!-- Overlapping Ethnic Border -->
-    <div class="ethnic-border hero-border"></div>
-  </section>
-  <!-- Craftsmanship & Benefits Section -->
-  <!-- Craftsmanship & Benefits Section (User Provided Layout) -->
-  <section class="backgroundv2">
-    <!-- Background Banner (using existing ethnic border as fallback for banner) -->
-    <div class="ethnic-border" style="display:block; opacity:1; margin-bottom:0;"></div>
-
-    <div class="container">
-      <div class="row section-padding pt-0" style="padding-top: 60px;">
-        <div class="text-center mb-4 pb-3 dp-promise-header">
-          <img src="assets/images/Copy%20of%20DP%20Logo-04.png" alt="DP Logo" style="height: 60px; width: auto; max-width: 100%;" />
-          <h2 class="dptext section-title" style="margin: 10px 0 0 0;">Promise</h2>
+      <div class="video-content container fade-in-up">
+        <p class="video-subtitle">Ballia's Heritage Jeweller · Est. 1941</p>
+        <h1 class="video-title">Where Craft<br />Becomes Legacy</h1>
+        <div class="video-divider"></div>
+        <p class="video-description">For over eight decades, families across Uttar Pradesh have trusted DP Jewellers for BIS-hallmarked gold, certified diamonds, and designs that become legacies.</p>
+        <div class="hero-actions">
+          <a href="#collections" class="btn-primary">View Collections</a>
+          <a href="#contact-inquiry" class="btn-outline">Visit Our Store</a>
         </div>
-        <div class="px-md-5 whydp-main">
+      </div>
+      <a href="#trust" class="hero-scroll" aria-label="Scroll down">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </a>
+      <div class="ethnic-border hero-border"></div>
+    </section>
 
-          <!-- Classic Designer Collection -->
-          <div class="single-div">
-            <svg class="benefit-icon mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 3h12l4 6-10 12L2 9z"></path>
-              <path d="M11 3L8 9l4 4 4-4-3-6"></path>
-              <path d="M2 9h20"></path>
-            </svg>
-            <div class="custom-border-right">
-              <h3 class="text-center fw-semibold dptext3 font16">CLASSIC DESIGNER COLLECTION</h3>
+    <!-- 2. Trust Strip -->
+    <section class="trust-strip" id="trust">
+      <div class="container">
+        <div class="trust-strip-grid">
+          <div class="trust-strip-item fade-in-up">
+            <svg class="trust-strip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <p class="trust-strip-label">Since 1941</p>
+            <p class="trust-strip-sub">80+ years of heritage</p>
+          </div>
+          <div class="trust-strip-item fade-in-up">
+            <svg class="trust-strip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <p class="trust-strip-label">BIS Hallmarked</p>
+            <p class="trust-strip-sub">Certified gold purity</p>
+          </div>
+          <div class="trust-strip-item fade-in-up">
+            <svg class="trust-strip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <p class="trust-strip-label">Master Craftsmanship</p>
+            <p class="trust-strip-sub">Hand-finished by artisans</p>
+          </div>
+          <div class="trust-strip-item fade-in-up">
+            <svg class="trust-strip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><polyline points="21 3 21 8 16 8"/></svg>
+            <p class="trust-strip-label">Lifetime Exchange</p>
+            <p class="trust-strip-sub">Our commitment to you</p>
+          </div>
+          <div class="trust-strip-item fade-in-up">
+            <svg class="trust-strip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <p class="trust-strip-label">Transparent Service</p>
+            <p class="trust-strip-sub">Honest guidance in-store</p>
+          </div>
+          <div class="trust-strip-item fade-in-up">
+            <svg class="trust-strip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <p class="trust-strip-label">Ballia Flagship</p>
+            <p class="trust-strip-sub">Visit us in person</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Explore Collections -->
+    <section class="category-editorial" id="collections">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-eyebrow">Our Collections</span>
+          <h2 class="section-title">Explore Our Craft</h2>
+          <p class="section-subtitle">Curated showcases of gold, diamond, and heritage designs — each piece a testament to artistry.</p>
+        </div>
+        <div class="category-editorial-grid">
+          <a href="pages/collections/gold-jewellery.html" class="category-tile fade-in-up">
+            <picture><source srcset="assets/images/jewellery%20images/AKP00095.webp" type="image/webp"><img src="assets/images/jewellery%20images/AKP00095.jpg" alt="Gold Jewellery" loading="lazy" decoding="async"></picture>
+            <div class="category-tile-overlay">
+              <p class="category-tile-name">Gold Jewellery</p>
+              <span class="category-tile-link">View Collection →</span>
+            </div>
+          </a>
+          <a href="pages/collections/diamond-jewellery.html" class="category-tile fade-in-up">
+            <img src="assets/images/diamond-necklace-bust-premium.png" alt="Diamond Jewellery" loading="lazy" decoding="async">
+            <div class="category-tile-overlay">
+              <p class="category-tile-name">Diamond Jewellery</p>
+              <span class="category-tile-link">View Collection →</span>
+            </div>
+          </a>
+          <a href="pages/collections/grand-bridal.html" class="category-tile fade-in-up">
+            <picture><source srcset="assets/images/bridal-collection-featured.webp" type="image/webp"><img src="assets/images/bridal-collection-featured.jpg" alt="Grand Bridal" loading="lazy" decoding="async"></picture>
+            <div class="category-tile-overlay">
+              <p class="category-tile-name">Grand Bridal</p>
+              <span class="category-tile-link">View Collection →</span>
+            </div>
+          </a>
+          <a href="pages/collections/silver-articles.html" class="category-tile fade-in-up">
+            <picture><source srcset="assets/images/jewellery%20images/pexels-nexarostudio-25283500.webp" type="image/webp"><img src="assets/images/jewellery%20images/pexels-nexarostudio-25283500.jpg" alt="Silver Articles" loading="lazy" decoding="async"></picture>
+            <div class="category-tile-overlay">
+              <p class="category-tile-name">Silver Articles</p>
+              <span class="category-tile-link">View Collection →</span>
+            </div>
+          </a>
+          <a href="pages/collections/platinum.html" class="category-tile fade-in-up">
+            <picture><source srcset="assets/images/jewellery%20images/pexels-arif-17298688.webp" type="image/webp"><img src="assets/images/jewellery%20images/pexels-arif-17298688.jpg" alt="Platinum" loading="lazy" decoding="async"></picture>
+            <div class="category-tile-overlay">
+              <p class="category-tile-name">Platinum</p>
+              <span class="category-tile-link">View Collection →</span>
+            </div>
+          </a>
+          <a href="pages/collections/gemstones.html" class="category-tile fade-in-up">
+            <picture><source srcset="assets/images/jewellery%20images/pexels-abdulla-nasar-1451813884-29495801.webp" type="image/webp"><img src="assets/images/jewellery%20images/pexels-abdulla-nasar-1451813884-29495801.jpg" alt="Gemstones" loading="lazy" decoding="async"></picture>
+            <div class="category-tile-overlay">
+              <p class="category-tile-name">Gemstones</p>
+              <span class="category-tile-link">View Collection →</span>
+            </div>
+          </a>
+        </div>
+        <div class="category-editorial-scroll">
+          <a href="pages/collections/gold-jewellery.html" class="category-tile">
+            <picture><source srcset="assets/images/jewellery%20images/AKP00095.webp" type="image/webp"><img src="assets/images/jewellery%20images/AKP00095.jpg" alt="Gold Jewellery" loading="lazy" decoding="async"></picture>
+            <div class="category-tile-overlay"><p class="category-tile-name">Gold Jewellery</p><span class="category-tile-link">View Collection →</span></div>
+          </a>
+          <a href="pages/collections/diamond-jewellery.html" class="category-tile">
+            <img src="assets/images/diamond-necklace-bust-premium.png" alt="Diamond Jewellery" loading="lazy">
+            <div class="category-tile-overlay"><p class="category-tile-name">Diamond Jewellery</p><span class="category-tile-link">View Collection →</span></div>
+          </a>
+          <a href="pages/collections/grand-bridal.html" class="category-tile">
+            <picture><source srcset="assets/images/bridal-collection-featured.webp" type="image/webp"><img src="assets/images/bridal-collection-featured.jpg" alt="Grand Bridal" loading="lazy"></picture>
+            <div class="category-tile-overlay"><p class="category-tile-name">Grand Bridal</p><span class="category-tile-link">View Collection →</span></div>
+          </a>
+          <a href="pages/collections/silver-articles.html" class="category-tile">
+            <picture><source srcset="assets/images/jewellery%20images/pexels-nexarostudio-25283500.webp" type="image/webp"><img src="assets/images/jewellery%20images/pexels-nexarostudio-25283500.jpg" alt="Silver Articles" loading="lazy"></picture>
+            <div class="category-tile-overlay"><p class="category-tile-name">Silver Articles</p><span class="category-tile-link">View Collection →</span></div>
+          </a>
+          <a href="pages/collections/platinum.html" class="category-tile">
+            <picture><source srcset="assets/images/jewellery%20images/pexels-arif-17298688.webp" type="image/webp"><img src="assets/images/jewellery%20images/pexels-arif-17298688.jpg" alt="Platinum" loading="lazy"></picture>
+            <div class="category-tile-overlay"><p class="category-tile-name">Platinum</p><span class="category-tile-link">View Collection →</span></div>
+          </a>
+          <a href="pages/collections/gemstones.html" class="category-tile">
+            <picture><source srcset="assets/images/jewellery%20images/pexels-abdulla-nasar-1451813884-29495801.webp" type="image/webp"><img src="assets/images/jewellery%20images/pexels-abdulla-nasar-1451813884-29495801.jpg" alt="Gemstones" loading="lazy"></picture>
+            <div class="category-tile-overlay"><p class="category-tile-name">Gemstones</p><span class="category-tile-link">View Collection →</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Featured Showcase -->
+    <section class="lookbook-featured">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-eyebrow">Featured Showcase</span>
+          <h2 class="section-title">Collections That Tell a Story</h2>
+        </div>
+      </div>
+      <div class="lookbook-row fade-in-up">
+        <div class="lookbook-media">
+          <picture><source srcset="assets/images/bridal-collection-featured.webp" type="image/webp"><img src="assets/images/bridal-collection-featured.jpg" alt="Grand Bridal Collection" loading="lazy" decoding="async"></picture>
+        </div>
+        <div class="lookbook-copy">
+          <span class="section-eyebrow">Bridal</span>
+          <h3>Grand Bridal</h3>
+          <p>Majestic sets crafted for your eternal union. Each piece embodies the grandeur of Indian wedding traditions with contemporary elegance.</p>
+          <a href="pages/collections/grand-bridal.html" class="btn-link">View Collection →</a>
+        </div>
+      </div>
+      <div class="lookbook-row lookbook-row--reverse fade-in-up">
+        <div class="lookbook-media">
+          <picture><source srcset="assets/images/minimal-collection-featured.webp" type="image/webp"><img src="assets/images/minimal-collection-featured.jpg" alt="Modern Minimal Collection" loading="lazy" decoding="async"></picture>
+        </div>
+        <div class="lookbook-copy">
+          <span class="section-eyebrow">Everyday Elegance</span>
+          <h3>Modern Minimal</h3>
+          <p>Subtle grace for your daily narrative. Refined pieces that complement every moment without overwhelming it.</p>
+          <a href="pages/collections/gold-jewellery.html" class="btn-link">View Collection →</a>
+        </div>
+      </div>
+      <div class="lookbook-row fade-in-up">
+        <div class="lookbook-media">
+          <img src="assets/images/diamond-necklace-bust-premium.png" alt="Eternal Diamonds Collection" loading="lazy" decoding="async">
+        </div>
+        <div class="lookbook-copy">
+          <span class="section-eyebrow">Diamonds</span>
+          <h3>Eternal Diamonds</h3>
+          <p>Brilliance that captures every moment. Carefully selected diamonds set in masterpieces destined to become cherished heirlooms.</p>
+          <a href="pages/collections/diamond-jewellery.html" class="btn-link">View Collection →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. DP Promise -->
+    <section class="dp-promise">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <img src="assets/images/Copy%20of%20DP%20Logo-04.png" alt="DP Jewellers" class="dp-promise-logo" />
+          <span class="section-eyebrow">Our Promise</span>
+          <h2 class="section-title">The DP Promise</h2>
+          <p class="section-subtitle">What we stand for — every visit, every piece, every generation.</p>
+        </div>
+        <div class="promise-grid">
+          <div class="promise-card fade-in-up">
+            <svg class="promise-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M11 3L8 9l4 4 4-4-3-6"/><path d="M2 9h20"/></svg>
+            <h3>Classic Designer Collection</h3>
+            <p>Timeless designs that blend traditional Indian artistry with contemporary sensibilities.</p>
+          </div>
+          <div class="promise-card fade-in-up">
+            <svg class="promise-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <h3>100% Satisfaction</h3>
+            <p>Your delight is our measure of success. We stand behind every piece we create.</p>
+          </div>
+          <div class="promise-card fade-in-up">
+            <svg class="promise-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <h3>Transparency</h3>
+            <p>Clear guidance on purity, weight, and craftsmanship — no hidden details, ever.</p>
+          </div>
+          <div class="promise-card fade-in-up">
+            <svg class="promise-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><polyline points="21 3 21 8 16 8"/></svg>
+            <h3>Guaranteed Exchange</h3>
+            <p>Exchange eligible jewellery at full value — our commitment to your long-term trust.</p>
+          </div>
+          <div class="promise-card fade-in-up">
+            <svg class="promise-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <h3>Trustworthy Service</h3>
+            <p>Four generations of families have chosen us. Your trust is our greatest heirloom.</p>
+          </div>
+          <div class="promise-card fade-in-up">
+            <svg class="promise-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <h3>Master Craftsmanship</h3>
+            <p>Every piece hand-finished by skilled artisans who honour decades of tradition.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Heritage Timeline -->
+    <section class="heritage-timeline" id="story">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-eyebrow">Our Legacy</span>
+          <h2 class="section-title">A Legacy Written in Gold</h2>
+          <p class="section-subtitle">Since 1941 — from a humble beginning to a modern flagship in the heart of Ballia.</p>
+        </div>
+        <div class="timeline-track">
+          <div class="timeline-milestone fade-in-up">
+            <div class="timeline-year">1941</div>
+            <h3>The Beginning</h3>
+            <p>Founded on pillars of trust and quality that still define us today.</p>
+          </div>
+          <div class="timeline-milestone fade-in-up">
+            <div class="timeline-year">1988</div>
+            <h3>First Transformation</h3>
+            <p>Embracing new styles while keeping traditional values intact.</p>
+          </div>
+          <div class="timeline-milestone fade-in-up">
+            <div class="timeline-year">1999</div>
+            <h3>Growing Legacy</h3>
+            <p>A household name — expanding collections and modernising our craft.</p>
+          </div>
+          <div class="timeline-milestone fade-in-up">
+            <div class="timeline-year">2024</div>
+            <h3>Modern Flagship</h3>
+            <p>A new era of luxury — our transformed store in Ballia.</p>
+          </div>
+        </div>
+        <div class="timeline-cta fade-in-up">
+          <a href="pages/info/my-story.html" class="btn-primary">Read Our Full Story</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Craftsmanship -->
+    <section class="craft-process">
+      <div class="container">
+        <div class="craft-layout">
+          <div class="craft-image fade-in-up">
+            <picture><source srcset="assets/images/our-story-craftsmanship.webp" type="image/webp"><img src="assets/images/our-story-craftsmanship.jpg" alt="Master craftsman at work" loading="lazy" decoding="async"></picture>
+          </div>
+          <div class="craft-content fade-in-up">
+            <span class="section-eyebrow">Our Craft</span>
+            <h2 class="section-title">The Art of Making Heirlooms</h2>
+            <p class="section-subtitle section-header--left mb-section">Every piece passes through the hands of master artisans — a process unchanged in spirit for over eight decades.</p>
+            <div class="craft-steps">
+              <div class="craft-step">
+                <span class="craft-step-num">01</span>
+                <div>
+                  <h3>Design</h3>
+                  <p>Sketches inspired by heritage motifs and contemporary elegance.</p>
+                </div>
+              </div>
+              <div class="craft-step">
+                <span class="craft-step-num">02</span>
+                <div>
+                  <h3>Handcraft</h3>
+                  <p>Meticulous shaping and setting by experienced goldsmiths.</p>
+                </div>
+              </div>
+              <div class="craft-step">
+                <span class="craft-step-num">03</span>
+                <div>
+                  <h3>Hallmark</h3>
+                  <p>BIS-certified purity verified before any piece leaves our workshop.</p>
+                </div>
+              </div>
+              <div class="craft-step">
+                <span class="craft-step-num">04</span>
+                <div>
+                  <h3>Finish</h3>
+                  <p>Final polish and inspection — ready to become your heirloom.</p>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <!-- 100% Satisfaction -->
-          <div class="single-div">
-            <svg class="benefit-icon mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-              <polyline points="22 4 12 14.01 9 11.01"></polyline>
-            </svg>
-            <div class="custom-border-right">
-              <h3 class="text-center fw-semibold dptext3 font16">100% SATISFACTION</h3>
+    <!-- 8. Editorial Gallery -->
+    <section class="brand-gallery-section">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-eyebrow">Portfolio</span>
+          <h2 class="section-title">A Glimpse Into Our World</h2>
+        </div>
+        <div class="editorial-gallery">
+          <div class="editorial-gallery-item fade-in-up">
+            <picture><source srcset="assets/images/jewellery%20images/pexels-bhoopal-m-642163-1446161.webp" type="image/webp"><img src="assets/images/jewellery%20images/pexels-bhoopal-m-642163-1446161.jpg" alt="Bridal gold jewellery" loading="lazy" decoding="async"></picture>
+          </div>
+          <div class="editorial-gallery-item fade-in-up">
+            <picture><source srcset="assets/images/jewellery%20images/AKP00131.webp" type="image/webp"><img src="assets/images/jewellery%20images/AKP00131.jpg" alt="Intricate gold necklace" loading="lazy" decoding="async"></picture>
+          </div>
+          <div class="editorial-gallery-item fade-in-up">
+            <picture><source srcset="assets/images/jewellery%20images/pexels-arif-13595733.webp" type="image/webp"><img src="assets/images/jewellery%20images/pexels-arif-13595733.jpg" alt="Artisan gold earrings" loading="lazy" decoding="async"></picture>
+          </div>
+          <div class="editorial-gallery-item fade-in-up">
+            <picture><source srcset="assets/images/jewellery%20images/pexels-bananamade-4166457.webp" type="image/webp"><img src="assets/images/jewellery%20images/pexels-bananamade-4166457.jpg" alt="Gold chain necklace" loading="lazy" decoding="async"></picture>
+          </div>
+        </div>
+        <p class="gallery-caption fade-in-up">Exquisite details and timeless elegance — crafted in Ballia, cherished everywhere.</p>
+      </div>
+    </section>
+
+    <!-- 9. Our Journey Video -->
+    <section class="journey-video-section" id="our-journey">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-eyebrow">Our Journey</span>
+          <h2 class="section-title">Eight Decades of Brilliance</h2>
+          <p class="section-subtitle">Watch the story of craftsmanship, trust, and love for jewellery.</p>
+        </div>
+        <div class="video-frame fade-in-up">
+          <div class="video-frame-inner">
+            <iframe data-src="https://www.youtube.com/embed/CmtcVNf1Lbo?rel=0&modestbranding=1" title="DP Jewellers — Our Journey" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+        <p class="video-caption fade-in-up">From our workshop in Ballia to generations of cherished memories.</p>
+      </div>
+    </section>
+
+    <!-- 10. Customer Stories -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-eyebrow">Patron Stories</span>
+          <h2 class="section-title">Trusted by Generations</h2>
+          <p class="section-subtitle">What families across Ballia and beyond say about their journey with us.</p>
+        </div>
+        <div class="testimonials-showcase">
+          <div class="testimonial-card active" data-index="0">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"DP Jewellers has been our family's trusted choice for generations. Their attention to detail and commitment to purity is unmatched."</p>
+            <h4 class="customer-name">Mrs. Anjali Sharma · Ballia</h4>
+          </div>
+          <div class="testimonial-card" data-index="1">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"The craftsmanship is extraordinary. My bridal set was everything I dreamed of and more. Truly a masterpiece!"</p>
+            <h4 class="customer-name">Ms. Priya Verma · Uttar Pradesh</h4>
+          </div>
+          <div class="testimonial-card" data-index="2">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"I've visited DP Jewellers for over 20 years. Their transparency and exceptional in-store service keep me coming back."</p>
+            <h4 class="customer-name">Mr. Rajesh Kumar · Ballia</h4>
+          </div>
+          <div class="testimonial-card" data-index="3">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"The quality and authenticity of their gold is remarkable. DP Jewellers has earned our complete trust and loyalty."</p>
+            <h4 class="customer-name">Mrs. Sunita Devi · Ballia</h4>
+          </div>
+        </div>
+        <div class="testimonial-dots" role="tablist" aria-label="Testimonials">
+          <button class="testimonial-dot active" data-index="0" aria-label="Testimonial 1"></button>
+          <button class="testimonial-dot" data-index="1" aria-label="Testimonial 2"></button>
+          <button class="testimonial-dot" data-index="2" aria-label="Testimonial 3"></button>
+          <button class="testimonial-dot" data-index="3" aria-label="Testimonial 4"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Visit Store -->
+    <section class="store-inquiry" id="contact-inquiry">
+      <div class="container">
+        <div class="store-layout">
+          <div class="store-info fade-in-up">
+            <span class="section-eyebrow">Visit Us</span>
+            <h2 class="section-title section-header--left">Experience DP Jewellers in Person</h2>
+            <p class="section-subtitle section-header--left mb-section">Walk into our Ballia flagship and discover collections crafted for generations.</p>
+            <div class="store-details">
+              <p><strong>Address:</strong> NCC Tiraha, Tikhampur, Ballia, Uttar Pradesh 277001</p>
+              <p><strong>Phone:</strong> 090056 60060</p>
+              <p><strong>Email:</strong> info@dpjewellersballia.com</p>
+              <p><strong>Hours:</strong> Mon–Sat 10:00 AM – 8:00 PM · Sun 11:00 AM – 6:00 PM</p>
+            </div>
+            <div class="store-actions">
+              <a href="tel:+919005660060" class="store-btn-primary">Call Us</a>
+              <a href="https://wa.me/919005660060" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              <a href="https://www.google.com/maps/dir/?api=1&destination=NCC+Tiraha,+Tikhampur,+Ballia,+Uttar+Pradesh+277001" target="_blank" rel="noopener noreferrer">Get Directions</a>
+            </div>
+            <div class="map-container">
+              <iframe data-src="https://www.google.com/maps?q=NCC+Tiraha,+Tikhampur,+Ballia,+Uttar+Pradesh+277001,+India&output=embed" title="DP Jewellers store location" loading="lazy"></iframe>
             </div>
           </div>
-
-          <!-- Transparency -->
-          <div class="single-div">
-            <svg class="benefit-icon mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            <div class="custom-border-right">
-              <h3 class="text-center fw-semibold dptext3 font16">TRANSPARENCY</h3>
-            </div>
-          </div>
-
-          <!-- Guaranteed Exchange -->
-          <div class="single-div">
-            <svg class="benefit-icon mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path>
-              <polyline points="21 3 21 8 16 8"></polyline>
-            </svg>
-            <div class="custom-border-right">
-              <h3 class="text-center fw-semibold dptext3 font16">100% GUARANTEED EXCHANGE</h3>
-            </div>
-          </div>
-
-          <!-- Best Price -->
-          <div class="single-div">
-            <svg class="benefit-icon mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
-              <line x1="7" y1="7" x2="7.01" y2="7"></line>
-            </svg>
-            <div class="custom-border-right">
-              <h3 class="text-center fw-semibold dptext3 font16">BEST PRICE GUARANTEED</h3>
-            </div>
-          </div>
-
-          <!-- Trustworthy -->
-          <div class="single-div">
-            <svg class="benefit-icon mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            </svg>
-            <div class="custom-border-right"> <!-- Removed border for last item via CSS -->
-              <h3 class="text-center fw-semibold dptext3 font16">TRUSTWORTHY</h3>
-            </div>
+          <div class="inquiry-panel fade-in-up">
+            <h3>Plan Your Visit</h3>
+            <p class="inquiry-sub">Send an inquiry and our team will help you explore the perfect collection.</p>
+            <form class="inquiry-form">
+              <div class="form-group">
+                <input type="text" placeholder="Your Name" required />
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Email Address" required />
+              </div>
+              <div class="form-group">
+                <select required>
+                  <option value="" disabled selected>Collection of Interest</option>
+                  <option value="gold">Gold Jewellery</option>
+                  <option value="diamond">Diamond Jewellery</option>
+                  <option value="bridal">Grand Bridal</option>
+                  <option value="platinum">Platinum</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea placeholder="Your Message" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="btn-primary btn-full">Send Inquiry</button>
+            </form>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="row section-padding pt-0 mx-1">
-        <h2 class="text-center dptext section-title mb-3" style="margin-top: 60px;">Our Craftsmanship</h2>
+  </main>
 
-        <!-- Simulate Swiper with Grid/Flex -->
-        <div class="ourcrafsld">
-          <div class="custom-grid-wrapper">
-
-            <!-- Gold -->
-            <div class="custom-slide-item">
-              <a href="pages/collections/gold-jewellery.html" class="text-decoration-none">
-                <img src="assets/images/jewellery images/AKP00095.jpg" class="w-100 mb-3 " alt="Gold Bridal Set" loading="lazy">
-                <h3 class="text-center dptext font20 fw-semibold">Gold Jewellery</h3>
-              </a>
-            </div>
-
-            <!-- Diamond -->
-            <div class="custom-slide-item">
-              <a href="pages/collections/diamond-jewellery.html" class="text-decoration-none">
-                <img src="assets/images/diamond-necklace-bust-premium.png" class="w-100 mb-3 " alt="Diamond Necklace Set" loading="lazy">
-                <h3 class="text-center dptext font20 fw-semibold">Diamond Jewellery</h3>
-              </a>
-            </div>
-
-            <!-- Gold Rings -->
-            <div class="custom-slide-item">
-              <a href="pages/collections/gold-jewellery.html" class="text-decoration-none">
-                <img src="assets/images/jewellery images/pexels-the-glorious-studio-3584518-17068459.jpg" class="w-100 mb-3 " alt="Gold Rings and Bangles" loading="lazy">
-                <h3 class="text-center dptext font20 fw-semibold">Gold Rings & Bangles</h3>
-              </a>
-            </div>
-
-            <!-- Mangalsutra -->
-            <div class="custom-slide-item">
-              <a href="pages/collections/gold-jewellery.html" class="text-decoration-none">
-                <img src="assets/images/jewellery images/pexels-nexarostudio-25283500.jpg" class="w-100 mb-3 " alt="Gold Mangalsutra" loading="lazy">
-                <h3 class="text-center dptext font20 fw-semibold">Gold Mangalsutra</h3>
-              </a>
-            </div>
-
-            <!-- Rose Gold -->
-            <div class="custom-slide-item">
-              <a href="pages/collections/gold-jewellery.html" class="text-decoration-none">
-                <img src="assets/images/jewellery images/pexels-arif-17298688.jpg" class="w-100 mb-3 " alt="Rose Gold Jewellery" loading="lazy">
-                <h3 class="text-center dptext font20 fw-semibold">Rose Gold Jewellery</h3>
-              </a>
-            </div>
-
-            <!-- Polki Diamonds -->
-            <div class="custom-slide-item">
-              <a href="pages/collections/diamond-jewellery.html" class="text-decoration-none">
-                <img src="assets/images/jewellery images/pexels-abdulla-nasar-1451813884-29495801.jpg" class="w-100 mb-3 " alt="Polki Diamond Ring" loading="lazy">
-                <h3 class="text-center dptext font20 fw-semibold">Polki Diamonds</h3>
-              </a>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Categories Section -->
-  <section class="categories" id="collections">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <h2 class="section-title">Our Collections</h2>
-        <p class="section-subtitle">Curated selections for every occasion</p>
-      </div>
-
-      <div class="categories-grid">
-        <div class="category-card fade-in-up">
-          <div class="category-image">
-            <img src="assets/images/bridal-collection-featured.jpg" alt="Bridal Wear Collection" class="img-fluid" />
-          </div>
-          <div class="category-content">
-            <h3 class="category-title">Grand Bridal</h3>
-            <p class="category-description">
-              Majestic sets for your eternal union
-            </p>
-          </div>
-        </div>
-
-        <div class="category-card fade-in-up">
-          <div class="category-image">
-            <img src="assets/images/minimal-collection-featured.jpg" alt="Daily Minimal Collection" class="img-fluid" />
-          </div>
-          <div class="category-content">
-            <h3 class="category-title">Modern Minimal</h3>
-            <p class="category-description">
-              Subtle grace for your daily narrative
-            </p>
-          </div>
-        </div>
-
-        <div class="category-card fade-in-up">
-          <div class="category-image">
-            <img src="assets/images/diamond-necklace-bust-premium.png" alt="Diamond Jewellery Collection"
-              class="img-fluid" />
-          </div>
-          <div class="category-content">
-            <h3 class="category-title">Eternal Diamonds</h3>
-            <p class="category-description">
-              Brilliance that captures every moment
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Product Showcase -->
-
-  <!-- Our Story Section -->
-  <section class="story" id="story">
-    <div class="container">
-      <div class="story-content">
-        <div class="story-text fade-in-up">
-          <h2 class="section-title">Our Story</h2>
-          <div class="story-divider"></div>
-          <p>
-            For over eight decades, DP Jewellers has been crafting moments of
-            brilliance. Founded on principles of authenticity, artistry, and
-            excellence, we transform precious metals and gemstones into
-            heirlooms that transcend generations.
-          </p>
-          <p>
-            Each piece in our collection is a testament to the skilled hands
-            of our master craftsmen, who blend traditional techniques with
-            contemporary design sensibilities.
-          </p>
-        </div>
-        <div class="story-image fade-in-up">
-          <img src="assets/images/our-story-craftsmanship.jpg" alt="Master craftsman working on intricate jewelry design"
-            style="border-radius: 8px; box-shadow: var(--shadow-premium);" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Heritage Showcase (Staggered Layout) -->
-  <section class="heritage-showcase">
-    <div class="container">
-      <!-- Item 1 -->
-      <div class="showcase-item fade-in-up">
-        <div class="showcase-image">
-          <img src="assets/images/jewellery images/AKP00050.jpg" alt="Traditional antique gold necklace with intricate embossing" loading="lazy" />
-        </div>
-        <div class="showcase-text">
-          <h3>Traditions embossed in gold</h3>
-          <p>Our gold collection is more than just jewellery; it is a celebration of heritage. Each piece is
-            meticulously crafted to reflect the timeless elegance of Indian artistry, embossed with intricate patterns
-            that tell stories of a golden era.</p>
-        </div>
-      </div>
-
-      <!-- Item 2 - Diamond Section -->
-      <div class="showcase-item fade-in-up">
-        <div class="showcase-image">
-          <img src="assets/images/group final a.jpg" alt="Elegant diamond necklace collection on display" loading="lazy" />
-        </div>
-        <div class="showcase-text">
-          <h3>A reflection of beauty</h3>
-          <p>Discover the brilliance of our carefully selected diamonds. Every facet is polished to perfection,
-            capturing and reflecting light in a dance of pure radiance. Designs that are as unique and beautiful as the
-            individuals who wear them.</p>
-        </div>
-      </div>
-
-      <!-- Item 3 -->
-      <div class="showcase-item fade-in-up">
-        <div class="showcase-image">
-          <img src="assets/images/jewellery images/AKP00053.jpg" alt="Grand bridal jewelry set for wedding occasions" loading="lazy" />
-        </div>
-        <div class="showcase-text">
-          <h3>Shine Bright. Sparkle more</h3>
-          <p>From majestic bridal sets to contemporary minimalist designs, our collection guarantees a sparkle that
-            never fades. We bring you the rarest of gems, set in masterpieces that are destined to become your most
-            cherished heirlooms.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="container">
-    <div class="section-header fade-in-up">
-      <h2 class="section-title">The Art of Jewellery</h2>
-      <p class="section-subtitle">Exquisite details and timeless elegance</p>
-    </div>
-    <div class="gallery-grid">
-      <div class="gallery-item fade-in-up">
-        <img src="assets/images/jewellery images/pexels-bhoopal-m-642163-1446161.jpg" alt="Bridal gold jewelry" loading="lazy" />
-      </div>
-      <div class="gallery-item fade-in-up">
-        <img src="assets/images/jewellery images/AKP00131.jpg" alt="Intricate gold antique necklace" loading="lazy" />
-      </div>
-      <div class="gallery-item fade-in-up">
-        <img src="assets/images/jewellery images/pexels-arif-13595733.jpg" alt="Artisan gold earrings" loading="lazy" />
-      </div>
-      <div class="gallery-item fade-in-up">
-        <img src="assets/images/jewellery images/pexels-bananamade-4166457.jpg" alt="Elegant gold chain necklace" loading="lazy" />
-      </div>
-    </div>
-  </div>
-  </section>
-  <!-- Our Journey Video -->
-  <section class="journey-video-section" id="our-journey" style="padding: 60px 0; background: var(--bg-primary);">
-    <div class="container">
-      <div class="section-header fade-in-up" style="text-align: center; margin-bottom: 36px;">
-        <h2 class="section-title">Our Journey</h2>
-        <p class="section-subtitle">Over eight decades of craftsmanship, trust, and love for jewellery</p>
-      </div>
-      <div class="fade-in-up" style="max-width: 820px; margin: 0 auto; border-radius: 16px; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,0.18);">
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-          <iframe
-            src="https://www.youtube.com/embed/CmtcVNf1Lbo?rel=0&modestbranding=1"
-            title="DP Jewellers — Our Journey"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            loading="lazy"
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-
-  <section class="testimonials" id="testimonials">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <h2 class="section-title">Customer Stories</h2>
-        <p class="section-subtitle">What our patrons say about their journey with us</p>
-      </div>
-      <div class="testimonials-slider">
-        <div class="testimonial-card fade-in-up active">
-          <p class="testimonial-text">"DP Jewellers has been our family's trusted choice for generations. Their
-            attention to detail and commitment to purity is unmatched."</p>
-          <h4 class="customer-name">- Mrs. Anjali Sharma</h4>
-        </div>
-        <div class="testimonial-card fade-in-up">
-          <p class="testimonial-text">"The craftsmanship at DP Jewellers is extraordinary. My bridal set was everything
-            I dreamed of and more. Truly a masterpiece!"</p>
-          <h4 class="customer-name">- Ms. Priya Verma</h4>
-        </div>
-        <div class="testimonial-card fade-in-up">
-          <p class="testimonial-text">"I've been shopping at DP Jewellers for over 20 years. Their transparency, fair
-            pricing, and exceptional service keep me coming back."</p>
-          <h4 class="customer-name">- Mr. Rajesh Kumar</h4>
-        </div>
-        <div class="testimonial-card fade-in-up">
-          <p class="testimonial-text">"The quality and authenticity of their gold is remarkable. DP Jewellers has earned
-            our complete trust and loyalty."</p>
-          <h4 class="customer-name">- Mrs. Sunita Devi</h4>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Store Location & Inquiry -->
-  <section class="store-inquiry" id="contact-inquiry">
-    <div class="container">
-      <div class="store-grid">
-        <div class="store-info fade-in-up">
-          <h2 class="section-title">Visit Our Store</h2>
-          <p class="section-subtitle">Experience luxury in person</p>
-          <div class="address-details">
-            <p>NCC Tiraha, Tikhampur, Ballia, Uttar Pradesh 277001, India</p>
-            <p>Phone: +91 98765 43210</p>
-            <p>Email: info@dpjewellersballia.com</p>
-          </div>
-          <div class="map-container">
-            <iframe
-              src="https://www.google.com/maps?q=NCC+Tiraha,+Tikhampur,+Ballia,+Uttar+Pradesh+277001,+India&output=embed"
-              width="100%" height="300" style="border:0; border-radius: 8px;" allowfullscreen=""
-              loading="lazy"></iframe>
-          </div>
-        </div>
-        <div class="inquiry-form-container fade-in-up">
-          <h3>Send an Inquiry</h3>
-          <form class="inquiry-form">
-            <div class="form-group">
-              <input type="text" placeholder="Your Name" required />
-            </div>
-            <div class="form-group">
-              <input type="email" placeholder="Email Address" required />
-            </div>
-            <div class="form-group">
-              <select required>
-                <option value="" disabled selected>Select Collection of Interest</option>
-                <option value="gold">Gold Jewellery</option>
-                <option value="diamond">Diamond Jewellery</option>
-                <option value="bridal">Grand Bridal</option>
-                <option value="platinum">Platinum</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <textarea placeholder="Your Message" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="cta-button">Send Inquiry</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Trust Signals -->
-  <section class="trust-signals">
-    <div class="container">
-      <div class="trust-grid">
-        <div class="trust-card fade-in-up">
-          <div class="trust-icon">
-            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              <path d="M9 12l2 2 4-4" />
-            </svg>
-          </div>
-          <h3 class="trust-title">Certified Purity</h3>
-          <p class="trust-description">
-            BIS hallmarked gold & GIA certified diamonds
-          </p>
-        </div>
-
-        <div class="trust-card fade-in-up">
-          <div class="trust-icon">
-            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-            </svg>
-          </div>
-          <h3 class="trust-title">Lifetime Exchange</h3>
-          <p class="trust-description">
-            100% exchange value on all purchases
-          </p>
-        </div>
-
-        <div class="trust-card fade-in-up">
-          <div class="trust-icon">
-            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5">
-              <rect x="1" y="3" width="15" height="13" />
-              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
-              <circle cx="5.5" cy="18.5" r="2.5" />
-              <circle cx="18.5" cy="18.5" r="2.5" />
-            </svg>
-          </div>
-          <h3 class="trust-title">Free Maintenance</h3>
-          <p class="trust-description">Lifetime care for your jewels</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <!-- 12. Footer -->
   <footer class="footer" id="contact">
     <div class="container footer-container">
-      <!-- Top Section: Subscription and Company Info -->
       <div class="footer-top">
         <div class="footer-newsletter">
-          <h3>Subscribe to receive exciting offers!</h3>
+          <h3>Stay Connected</h3>
           <form class="newsletter-form-inline">
             <div class="input-wrapper">
               <input type="email" placeholder="Your email address" required />
               <button type="submit">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               </button>
             </div>
           </form>
           <div class="company-info">
             <p class="company-name">DP Jewellers</p>
             <p class="address">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                style="margin-right: 5px">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 5px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               NCC Tiraha, Tikhampur, Ballia, Uttar Pradesh 277001, India
             </p>
           </div>
         </div>
-
-        <!-- Footer Columns -->
         <div class="footer-columns">
-
           <div class="footer-column">
             <h4>Help</h4>
             <ul>
               <li><a href="pages/info/faq.html">FAQ's</a></li>
               <li><a href="pages/info/contact.html">Contact Us</a></li>
               <li><a href="pages/policies/terms.html">Terms and Conditions</a></li>
-              <li><a href="pages/policies/payment-terms.html">Payment Terms and Conditions</a></li>
             </ul>
           </div>
           <div class="footer-column">
             <h4>Policies</h4>
             <ul>
               <li><a href="pages/policies/purchase-policy.html">Purchase Policy</a></li>
-              <li><a href="pages/policies/sale-policy.html">Sale Policy</a></li>
               <li><a href="pages/policies/privacy-policy.html">Privacy Policy</a></li>
             </ul>
           </div>
@@ -582,50 +560,41 @@
           </div>
         </div>
       </div>
-
-      <!-- Bottom Section: Socials, Apps, Payments -->
       <div class="footer-bottom-detailed">
         <div class="footer-bottom-left">
           <div class="social-icons-detailed">
-            <a href="#" class="social-circle"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-              </svg></a>
-            <a href="#" class="social-circle"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-              </svg></a>
-            <a href="#" class="social-circle"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect x="2" y="9" width="4" height="12"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg></a>
-            <a href="#" class="social-circle"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
-                </path>
-                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
-              </svg></a>
+            <a href="#" class="social-circle" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" class="social-circle" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
           </div>
           <div class="copyright-detailed">
             <p>Developed by <a href="https://mantravi.com" target="_blank" rel="noopener noreferrer">Mantravi</a></p>
           </div>
-          </div>
+        </div>
         <div class="scroll-top-wrapper">
-          <button id="scrollToTop" class="scroll-top-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="18 15 12 9 6 15"></polyline>
-            </svg>
+          <button id="scrollToTop" class="scroll-top-btn" aria-label="Scroll to top">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
           </button>
         </div>
       </div>
     </div>
-    </div>
   </footer>
 
-  <!-- JavaScript -->
-  <script src="assets/js/script.js?v=18"></script>
-</body>
+  <!-- Mobile sticky contact bar -->
+  <div class="mobile-contact-bar" aria-label="Quick contact">
+    <a href="tel:+919005660060">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call
+    </a>
+    <a href="https://wa.me/919005660060" target="_blank" rel="noopener noreferrer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+    <a href="#contact-inquiry">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Visit
+    </a>
+  </div>
 
+  <script src="assets/js/script.js?v=21"></script>
+</body>
 </html>
